@@ -57,7 +57,7 @@ export class App implements Nav {
   }
 
   private finished(m: Mission, sticker: string) {
-    update((s) => { s.stickers[m.id] = sticker; });
+    update((s) => { s.stickers[m.id] = sticker; if (s.lightsOut) s.lockedAt = Date.now(); });
     const host = this.current!.el;
     void showEnding(host, m, sticker, load(), this, this.endSignal);
   }
@@ -65,12 +65,15 @@ export class App implements Nav {
   wall() { this.mount(wallScreen(load(), this)); }
 
   parent() {
+    // holding the grown-ups button is the grown-up's say-so: lights back on
+    if (isLocked(load())) update((s) => { s.lockedAt = null; });
     music.set('off');
     this.mount(parentScreen(() => { audio.setVolumes(load().volume); this.home(); }));
   }
 
   lightsOut(speak = true) {
     if (load().lightsOut && !isLocked(load())) update((s) => { s.lockedAt = Date.now(); });
+    this.player = null;
     this.mount(lightsOutScreen(load(), this, { speak }));
   }
 }

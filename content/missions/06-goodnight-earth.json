@@ -123,7 +123,7 @@
           "if": {
             "first": "pajamas"
           },
-          "say": "First, cozy pajamas. One sleeve. Two sleeves. A pajama leg floated up, like a balloon."
+          "say": "First, cozy pajamas. One sleeve. Two sleeves. A pajama leg floated off, all by itself."
         },
         {
           "if": {
@@ -141,7 +141,7 @@
           "if": {
             "first": "teeth"
           },
-          "say": "Then, cozy pajamas. One sleeve. Two sleeves. A pajama leg floated up, like a balloon."
+          "say": "Then, cozy pajamas. One sleeve. Two sleeves. A pajama leg floated off, all by itself."
         },
         {
           "say": "Button doesn't have any teeth. So Button polished its screen, until it shone."

@@ -9,7 +9,7 @@ const TYPES: Record<string, string> = {
   '.woff2': 'font/woff2', '.woff': 'font/woff',
 };
 
-export async function serveDist(root = 'dist', port = 0): Promise<{ url: string; server: Server }> {
+export async function serveDist(root = process.env.DIST ?? 'dist', port = 0): Promise<{ url: string; server: Server }> {
   const server = createServer(async (req, res) => {
     try {
       let p = decodeURIComponent((req.url ?? '/').split('?')[0].split('#')[0]);

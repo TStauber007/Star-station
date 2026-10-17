@@ -78,7 +78,11 @@ export class MissionPlayer {
       h('div', { class: 'ctl-row left' }, home), h('div', { class: 'ctl-row right' }, replay, pause), this.pauseEl);
 
     this.stage.el.addEventListener('pointerdown', (e) => this.onStageTap(e));
+    document.addEventListener('visibilitychange', this.onHide);
   }
+
+  // the tablet went to sleep or switched apps: pause, and wait for a tap
+  private onHide = () => { if (document.hidden && !clock.paused && !this.signal.cancelled && this.phase !== 'end') this.pause(); };
 
   private get stageCtx() {
     const s = this.settings;
@@ -231,7 +235,7 @@ export class MissionPlayer {
     let order = 0;
     const done = this.stage.targets(list, (i, left, el) => {
       targetFx({ stage: this.stage, name, i, left, el, order: order++ });
-    }, this.signal);
+    }, this.signal, () => targetsFor(name, this.stage));
     if (flags.fast) {
       setTimeout(() => {
         this.stage.targetLayer.querySelectorAll<HTMLElement>('.target').forEach((t) => {
@@ -379,6 +383,7 @@ export class MissionPlayer {
   }
 
   cancel() {
+    document.removeEventListener('visibilitychange', this.onHide);
     this.signal.cancelled = true;
     this.narrator.stop();
     if (clock.paused) { audio.resume(); clock.resume(); }

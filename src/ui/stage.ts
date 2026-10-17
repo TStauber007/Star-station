@@ -38,6 +38,7 @@ export class Stage {
   fxLayer: HTMLElement;
   targetLayer: HTMLElement;
   private overlayEls: HTMLElement[] = [];
+  private live: { list: TargetSpec[]; buttons: HTMLElement[]; relist?: () => TargetSpec[] } | null = null;
 
   constructor() {
     this.el = h('div', { class: 'stage' });
@@ -85,6 +86,17 @@ export class Stage {
     this.measure();
     if (!this.ctx || (Math.abs(oldW - this.pxW) < 1 && Math.abs(oldH - this.pxH) < 1)) return;
     this.render('instant');
+    if (this.live) {
+      if (this.live.relist) { const fresh = this.live.relist(); if (fresh.length === this.live.list.length) this.live.list = fresh; }
+      this.live.buttons.forEach((b, i) => this.placeTarget(b, this.live!.list[i]));
+    }
+  }
+
+  private placeTarget(b: HTMLElement, t: TargetSpec) {
+    const [x, y] = this.px(t.x, t.y);
+    const size = Math.max(t.r * 2 * this.s, 104);
+    b.style.left = `${x - size / 2}px`; b.style.top = `${y - size / 2}px`;
+    b.style.width = `${size}px`; b.style.height = `${size}px`;
   }
 
   private render(mode: 'page' | 'patch' | 'instant') {
@@ -310,15 +322,18 @@ export class Stage {
 
   // --------------------------------------------------------------- targets
   /** Show big tap targets; resolves when every one has been tapped enough. */
-  targets(list: TargetSpec[], onTap: (i: number, left: number, el: HTMLElement) => void, signal: { cancelled: boolean }): Promise<void> {
+  targets(list: TargetSpec[], onTap: (i: number, left: number, el: HTMLElement) => void, signal: { cancelled: boolean }, relist?: () => TargetSpec[]): Promise<void> {
     this.targetLayer.innerHTML = '';
     let remaining = list.length;
+    const buttons: HTMLElement[] = [];
+    this.live = { list, buttons, relist };
     return new Promise((resolve) => {
+      const finish = () => { this.targetLayer.innerHTML = ''; this.live = null; resolve(); };
       list.forEach((t, i) => {
-        const [x, y] = this.px(t.x, t.y);
-        const size = Math.max(t.r * 2 * this.s, 104);
         let left = t.taps;
-        const b = h('button', { class: 'target', 'aria-label': 'Tap here', style: `left:${x - size / 2}px;top:${y - size / 2}px;width:${size}px;height:${size}px` });
+        const b = h('button', { class: 'target', 'aria-label': 'Tap here' });
+        this.placeTarget(b, t);
+        buttons.push(b);
         b.addEventListener('pointerdown', (e) => {
           e.preventDefault(); e.stopPropagation();
           if (left <= 0 || signal.cancelled) return;
@@ -327,15 +342,15 @@ export class Stage {
           if (left === 0) {
             b.classList.add('done');
             remaining--;
-            if (remaining === 0) setTimeout(() => { this.targetLayer.innerHTML = ''; resolve(); }, 350);
+            if (remaining === 0) setTimeout(finish, 350);
           }
         });
         this.targetLayer.append(b);
       });
-      const poll = () => { if (signal.cancelled) { this.targetLayer.innerHTML = ''; resolve(); } else setTimeout(poll, 200); };
+      const poll = () => { if (signal.cancelled) finish(); else if (this.live?.buttons === buttons) setTimeout(poll, 200); };
       poll();
     });
   }
 
-  clearTargets() { this.targetLayer.innerHTML = ''; }
+  clearTargets() { this.targetLayer.innerHTML = ''; this.live = null; }
 }

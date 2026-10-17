@@ -80,6 +80,9 @@ export function composeScene(rawArt: SceneArt, ctx: ComposeCtx): Scene {
   const moon = (art.moon ?? 'none') as MoonPhase;
   const H = half(ctx.W);
   const X = (fx: number) => fx * H;
+  // narrow (portrait) screens: smaller characters, staggered up and down
+  const fit = Math.max(0.7, Math.min(1, ctx.W / 1150));
+  const portrait = ctx.W < 1000;
   const layers = placeLayers(place, { W: ctx.W, time, lights, moon, props, bedtime: ctx.bedtime });
   const actors: Actor[] = [];
   const plant = (ctx.state.plant as PlantKind) || 'lettuce';
@@ -152,7 +155,8 @@ export function composeScene(rawArt: SceneArt, ctx: ComposeCtx): Scene {
       const solo = who.length === 1;
       let [fx, y] = solo ? [(slots.A[0] + slots.T[0]) / 2, (slots.A[1] + slots.T[1]) / 2] : slots[w];
       let pose = crewPose;
-      let scale = CREW_SCALE[w] * 0.95 * ACTOR_SCALE;
+      let scale = CREW_SCALE[w] * 0.95 * ACTOR_SCALE * fit;
+      if (portrait && !solo) y += w === 'A' ? -45 : 35;
       let flip = false;
       let anim = w === 'A' ? 'bob' : 'bob2';
       let rot = 0;
@@ -187,7 +191,8 @@ export function composeScene(rawArt: SceneArt, ctx: ComposeCtx): Scene {
   if (robotMood !== 'none' && robotMood !== 'hidden' && robotMood !== 'blanket') {
     let [fx, y] = slots.R;
     let x = X(fx);
-    const scale = 0.86 * ACTOR_SCALE;
+    const scale = 0.86 * ACTOR_SCALE * fit;
+    if (portrait) y -= 30;
     let anim = 'bob3';
     let z = 23;
     if (place === 'dock') { x = 190; y = 540; }

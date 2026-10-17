@@ -11,3 +11,4 @@ qa/screenshots/
 tools/tts/.venv/
 __pycache__/
 qa/sheets/
+dist-*/

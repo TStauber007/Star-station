@@ -33,7 +33,7 @@
       {
         "moment": "Dig up a seed to peek, or let the seeds rest",
         "options": [
-          "Peek: the little root droops out of its pillow. The crew tucks it back in, says sorry, and lets it rest. Later it grows strong.",
+          "Peek: the little root starts to dry out of its pillow. The crew tucks it back in, says sorry, and lets it rest. Later it grows strong.",
           "Rest: the seeds grow quietly, hidden in their pillows."
         ]
       },
@@ -280,7 +280,7 @@
           "say": "And there was the seed! It had a teeny, tiny root, as thin as a hair. It was just starting to grow."
         },
         {
-          "say": "But out of its cozy pillow, the little root began to droop."
+          "say": "But out of its cozy pillow, the little root began to dry out."
         },
         {
           "say": "\"Oh dear,\" said Button softly. \"Little roots like to stay tucked in.\""
@@ -324,7 +324,7 @@
           "say": "And deep inside, where no one could see, the seeds were busy."
         },
         {
-          "say": "Tiny roots were starting to grow. Down, down, down."
+          "say": "Tiny roots were starting to grow, deeper and deeper into the pillow."
         }
       ],
       "next": "p6"
@@ -430,7 +430,7 @@
           }
         },
         {
-          "say": "Lots and lots of sleeps went by. Weeks and weeks."
+          "say": "A few sleeps went by."
         }
       ],
       "next": "p7-sprout"
@@ -461,7 +461,7 @@
           "say": "\"Hello, sprout,\" whispered Button. \"Welcome to Star Station.\""
         },
         {
-          "say": "Every day, the crew gave the plants a little drink. And every day, the plants grew a tiny bit more.",
+          "say": "Every day, the crew gave the plants a little drink. And for weeks and weeks, the plants grew a tiny bit more every day.",
           "art": {
             "props": [
               "plants-2"
