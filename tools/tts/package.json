@@ -1,0 +1,12 @@
+{
+  "name": "star-station-tts",
+  "private": true,
+  "type": "module",
+  "description": "Build-time narration renderer. Never shipped in the app.",
+  "dependencies": {
+    "kokoro-js": "^1.2.1",
+    "kokoro-q8-shards": "^1.0.0",
+    "onnxruntime-node": "^1.30.0",
+    "phonemizer": "^1.2.1"
+  }
+}

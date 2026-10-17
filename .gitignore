@@ -8,3 +8,5 @@ playwright-report/
 qa/screenshots/
 *.log
 .DS_Store
+tools/tts/.venv/
+__pycache__/

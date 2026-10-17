@@ -1,0 +1,8 @@
+[
+  { "id": "home", "say": "Welcome to Star Station, {crew}! Which mission should we go on?" },
+  { "id": "wall", "say": "This is the station wall. Every sticker here is a mission you finished together." },
+  { "id": "sticker", "say": "Here's a sticker for the station wall, to remember this mission." },
+  { "id": "the-end", "say": "The end." },
+  { "id": "lights-out", "say": "Lights out on Star Station. Time to rest, crew. Goodnight.", "speed": 0.74 },
+  { "id": "bedtime-end", "say": "Sleep tight, Star Station.", "speed": 0.74 }
+]

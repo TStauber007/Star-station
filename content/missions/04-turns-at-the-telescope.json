@@ -1,0 +1,534 @@
+{
+  "id": "turns-at-the-telescope",
+  "order": 4,
+  "title": "Turns at the Telescope",
+  "titleSay": "Mission four. Turns at the Telescope!",
+  "mood": "day",
+  "sticker": "full-moon",
+  "cover": {
+    "place": "cupola",
+    "time": "night",
+    "moon": "full",
+    "robot": "look",
+    "props": [
+      "telescope"
+    ]
+  },
+  "parent": {
+    "virtue": "Taking turns and sharing",
+    "science": [
+      "The Moon doesn't make its own light; it shines with light from the Sun.",
+      "As the Moon goes around the Earth, we see more or less of its sunny side, so its shape seems to change: crescent, half, nearly full, full.",
+      "It takes about a month for the Moon to go through all its shapes.",
+      "The Moon always shows the same face to the Earth."
+    ],
+    "summary": "There is one telescope, and everybody wants the first look at the Moon. Night by night, the friends take turns while the Moon grows from a thin crescent to full.",
+    "paths": [
+      {
+        "moment": "Take turns, or squeeze in all at once",
+        "options": [
+          "Take turns: everyone floats back and there's room.",
+          "Squeeze: elbows and noses, and nobody sees the Moon. Someone says a small 'ow'. They say sorry and try taking turns."
+        ]
+      },
+      {
+        "moment": "Who goes first",
+        "options": [
+          "Tommy first (or, with one child, that child).",
+          "Button first: it says the crescent Moon is smiling."
+        ]
+      },
+      {
+        "moment": "Keep looking, or give Button a turn",
+        "options": [
+          "Keep looking: Button waits and its light grows dim. The looker notices and gives Button a turn.",
+          "Button's turn: Button is delighted."
+        ]
+      }
+    ],
+    "talk": [
+      "What happened when everyone squeezed in at once?",
+      "How does it feel when someone gives you a turn?",
+      "Where does the Moon's light come from?"
+    ]
+  },
+  "state": {
+    "first": "tommy"
+  },
+  "start": "p1",
+  "pages": {
+    "p1": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "look",
+        "moon": "none",
+        "props": [
+          "telescope"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Tonight, something special was going to rise over the edge of the Earth."
+        },
+        {
+          "say": "Something round, and bright, and silvery..."
+        },
+        {
+          "say": "The Moon!"
+        },
+        {
+          "say": "Star Station has a little telescope by the big window. Look through it, and the Moon looks big, and close."
+        },
+        {
+          "say": "But first, the telescope needs a polish. {A}, can you wipe the lens? Tap it three times.",
+          "do": {
+            "targets": "lens"
+          }
+        },
+        {
+          "say": "Swish, swish, swish. Sparkly clean!"
+        },
+        {
+          "say": "{T}, can you help the stars come out? Tap anywhere!",
+          "tap": {
+            "effect": "stars",
+            "count": 5
+          }
+        },
+        {
+          "say": "And there, peeking over the edge of the Earth, was the Moon.",
+          "art": {
+            "moon": "crescent"
+          }
+        }
+      ],
+      "next": "p2"
+    },
+    "p2": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "float",
+        "robot": "happy",
+        "moon": "crescent",
+        "props": [
+          "telescope"
+        ]
+      },
+      "beats": [
+        {
+          "say": "[\"Me first!\" said {a}. \"Me first!\" said {t}.|\"Me first!\" said {a}.] \"Beep first!\" said Button."
+        },
+        {
+          "say": "And everyone floated toward the telescope at the very same time."
+        }
+      ],
+      "choice": {
+        "say": "{A}, there's one telescope, and [three|two] friends. What should we do?",
+        "options": [
+          {
+            "card": "turns",
+            "label": "Take turns",
+            "say": "Take turns?",
+            "next": "p3-turns"
+          },
+          {
+            "card": "squeeze",
+            "label": "Squeeze in",
+            "say": "Or all squeeze in at once?",
+            "next": "p3-squeeze"
+          }
+        ]
+      }
+    },
+    "p3-squeeze": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "squish",
+        "robot": "squish",
+        "moon": "crescent",
+        "props": [
+          "telescope"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Squish! Squash! Bonk! Everybody squeezed in at once.",
+          "sfx": "bump"
+        },
+        {
+          "say": "There was an elbow in an ear, and a nose on the glass, and a robot arm in somebody's hair."
+        },
+        {
+          "say": "Nobody could see the Moon at all. Just elbows. And noses. And one very surprised robot."
+        },
+        {
+          "say": "\"Ow,\" said [{t}|{a}], in a small voice."
+        },
+        {
+          "say": "Everyone floated back. \"Sorry,\" said {a}. \"Let's try taking turns.\"",
+          "art": {
+            "crew": "float",
+            "robot": "happy"
+          }
+        }
+      ],
+      "next": "p4"
+    },
+    "p3-turns": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "float",
+        "robot": "happy",
+        "moon": "crescent",
+        "props": [
+          "telescope"
+        ]
+      },
+      "beats": [
+        {
+          "say": "\"Let's take turns!\" said {a}."
+        },
+        {
+          "say": "Everyone floated back a little. Now there was room for everybody to breathe."
+        }
+      ],
+      "next": "p4"
+    },
+    "p4": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "float",
+        "robot": "happy",
+        "moon": "crescent",
+        "props": [
+          "telescope"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{T}, can you make a happy wiggle while we decide? Tap anywhere!",
+          "tap": {
+            "effect": "giggle",
+            "count": 3
+          }
+        },
+        {
+          "say": "But who should go first?"
+        }
+      ],
+      "choice": {
+        "say": "{A}, who should go first?",
+        "options": [
+          {
+            "card": "first-crew",
+            "label": "[{t}|You]",
+            "say": "[Should {t} go first?|Should you go first?]",
+            "next": "p5",
+            "set": {
+              "first": "tommy"
+            }
+          },
+          {
+            "card": "first-button",
+            "label": "Button",
+            "say": "Or should Button go first?",
+            "next": "p5",
+            "set": {
+              "first": "button"
+            }
+          }
+        ]
+      }
+    },
+    "p5": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "happy",
+        "moon": "crescent",
+        "props": [
+          "telescope"
+        ]
+      },
+      "beats": [
+        {
+          "if": {
+            "first": "tommy"
+          },
+          "say": "{t} went first, and peeked into the telescope. \"Wow!\"",
+          "art": {
+            "crew": "telescope"
+          }
+        },
+        {
+          "if": {
+            "first": "button"
+          },
+          "say": "Button went first. \"Beep! The Moon is smiling at me!\"",
+          "art": {
+            "robot": "telescope"
+          }
+        },
+        {
+          "say": "The Moon was a thin, curvy sliver. Like a smile. Like a banana!"
+        },
+        {
+          "say": "\"That's called a crescent moon,\" said Button."
+        },
+        {
+          "say": "Then, one by one, everyone had a turn.",
+          "art": {
+            "crew": "look",
+            "robot": "look"
+          }
+        },
+        {
+          "say": "\"The Moon doesn't make its own light,\" said Button. \"It shines with light from the Sun.\""
+        },
+        {
+          "say": "\"And as the Moon goes around the Earth, we see more of its sunny side, or less. So it looks a little different, night after night.\""
+        }
+      ],
+      "next": "p6"
+    },
+    "p6": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "look",
+        "moon": "crescent",
+        "props": [
+          "telescope",
+          "moon-chart"
+        ]
+      },
+      "beats": [
+        {
+          "say": "\"Let's watch the Moon every night,\" said {a}. \"And take turns going first.\""
+        },
+        {
+          "say": "{T}, can you help the nights go by? Tap, and watch the Moon grow!",
+          "tap": {
+            "effect": "moon",
+            "count": 3
+          }
+        },
+        {
+          "say": "A thin crescent. Then a half moon. Then a big, bulgy, almost-full moon."
+        },
+        {
+          "say": "And each night, a different friend went first."
+        },
+        {
+          "say": "It takes the Moon about a month to go through all its shapes, from dark, to full, and back again."
+        }
+      ],
+      "next": "p6-chart"
+    },
+    "p6-chart": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "float",
+        "robot": "happy",
+        "moon": "gibbous",
+        "props": [
+          "moon-chart"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Every night, the crew drew the Moon's shape on their Moon chart."
+        },
+        {
+          "say": "{A}, can you help finish our Moon chart? Tap each Moon.",
+          "do": {
+            "targets": "moon-chart"
+          }
+        },
+        {
+          "say": "A crescent. A half. A big bulgy one. And soon, a full Moon."
+        },
+        {
+          "say": "\"The Moon looks like it's growing,\" said Button. \"But it's the same Moon, all the time. We just see more of its sunny side.\""
+        }
+      ],
+      "next": "p7"
+    },
+    "p7": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "telescope",
+        "robot": "look",
+        "moon": "full",
+        "props": [
+          "telescope",
+          "moon-chart"
+        ]
+      },
+      "beats": [
+        {
+          "say": "And then, one night, the Moon was round, and full, and bright as a lamp."
+        },
+        {
+          "say": "It was [{t}'s|{a}'s] turn. [{t}|{a}] looked, and looked, and looked."
+        },
+        {
+          "say": "\"One more look!\" said [{t}|{a}]."
+        },
+        {
+          "say": "But Button hadn't had a turn yet tonight.",
+          "art": {
+            "robot": "wait"
+          }
+        }
+      ],
+      "choice": {
+        "say": "{A}, what should we do?",
+        "options": [
+          {
+            "card": "keep-looking",
+            "label": "Keep looking",
+            "say": "[Let {t} keep looking?|Keep looking a little longer?]",
+            "next": "p8-keep"
+          },
+          {
+            "card": "button-turn",
+            "label": "Button's turn",
+            "say": "Or give Button a turn?",
+            "next": "p8-share"
+          }
+        ]
+      }
+    },
+    "p8-keep": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "telescope",
+        "robot": "wait",
+        "moon": "full",
+        "props": [
+          "telescope",
+          "moon-chart"
+        ]
+      },
+      "beats": [
+        {
+          "say": "[{t}|{a}] kept looking. And Button waited. And waited."
+        },
+        {
+          "say": "Button's tummy light grew dim, and its little antenna drooped.",
+          "art": {
+            "robot": "sad"
+          }
+        },
+        {
+          "say": "Then [{t}|{a}] looked up, and saw Button, waiting all alone.",
+          "art": {
+            "crew": "look"
+          }
+        },
+        {
+          "say": "\"Button's turn!\" said [{t}|{a}], and floated back from the telescope."
+        },
+        {
+          "say": "Button's tummy light glowed bright again. Button peeked in. \"Beep, beep, boo! It's beautiful!\"",
+          "art": {
+            "robot": "telescope"
+          }
+        }
+      ],
+      "next": "p9"
+    },
+    "p8-share": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "telescope",
+        "moon": "full",
+        "props": [
+          "telescope",
+          "moon-chart"
+        ]
+      },
+      "beats": [
+        {
+          "say": "\"Button's turn!\" said {a}."
+        },
+        {
+          "say": "Button peeked in. \"Beep, beep, boo! It's beautiful!\""
+        },
+        {
+          "say": "Button's tummy light glowed so bright, it lit up the whole Cupola."
+        }
+      ],
+      "next": "p9"
+    },
+    "p9": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "look",
+        "moon": "full",
+        "props": [
+          "moon-chart"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Then Button had an idea. \"Wait! The Cupola has seven windows. There's room for everyone to see the full Moon, all at once!\""
+        },
+        {
+          "say": "So [{a}, and {t}, and Button|{a} and Button] each floated to a window."
+        },
+        {
+          "say": "And together, side by side, they watched the full Moon glow."
+        },
+        {
+          "say": "\"See the dark patches?\" said Button. \"The Moon always shows us that same face.\""
+        },
+        {
+          "say": "{T}, can you say goodnight to the Moon? Tap anywhere!",
+          "tap": {
+            "effect": "twinkle",
+            "count": 3
+          }
+        }
+      ],
+      "next": "end"
+    },
+    "end": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "happy",
+        "moon": "full"
+      },
+      "beats": [
+        {
+          "say": "\"This is the best Moon ever,\" whispered [{t}|{a}]."
+        },
+        {
+          "say": "\"Beep,\" agreed Button, very softly."
+        },
+        {
+          "say": "One telescope. Lots of turns. And one big, bright, beautiful Moon, for everybody."
+        }
+      ],
+      "end": true
+    }
+  }
+}

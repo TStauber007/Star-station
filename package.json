@@ -1,0 +1,25 @@
+{
+  "name": "star-station",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A read-aloud, choose-your-path picture book about a friendly space station. Offline, private, calm.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run check:story && tsc --noEmit && vite build",
+    "preview": "vite preview --host --port 4173",
+    "serve:lan": "vite preview --host 0.0.0.0 --port 4173",
+    "check:story": "node tools/check-story.ts",
+    "narration": "tools/tts/.venv/bin/python tools/tts/render_narration.py",
+    "verify:paths": "node tools/verify/walk-paths.mjs",
+    "verify:screens": "node tools/verify/screenshots.mjs",
+    "verify:privacy": "node tools/verify/privacy.mjs",
+    "verify": "npm run verify:paths && npm run build && npm run verify:privacy && npm run verify:screens"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "typescript": "5.9",
+    "vite": "^8.3.4"
+  }
+}

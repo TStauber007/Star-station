@@ -1,0 +1,561 @@
+{
+  "id": "space-garden",
+  "order": 2,
+  "title": "The Space Garden",
+  "titleSay": "Mission two. The Space Garden!",
+  "mood": "day",
+  "sticker": "garden-$plant",
+  "cover": {
+    "place": "garden",
+    "props": [
+      "plants-3"
+    ],
+    "robot": "happy"
+  },
+  "parent": {
+    "virtue": "Patience",
+    "science": [
+      "Plants need light and water to grow.",
+      "Space gardens use special red and blue lights, which make the garden glow pink and purple.",
+      "Seeds grow in small plant pillows; water floats in wobbly balls in space, so watering is done carefully.",
+      "Leaves grow toward the light. Lettuce takes weeks to grow.",
+      "Real astronauts have grown and eaten lettuce, and grown zinnia flowers, on the space station."
+    ],
+    "summary": "The crew plants seeds in the station's glowing garden. Then comes the hard part: waiting.",
+    "paths": [
+      {
+        "moment": "What to grow",
+        "options": [
+          "Lettuce: the ending is a big, crunchy bite.",
+          "Zinnias: the ending is a bright orange flower for Button."
+        ]
+      },
+      {
+        "moment": "Dig up a seed to peek, or let the seeds rest",
+        "options": [
+          "Peek: the little root droops out of its pillow. The crew tucks it back in, says sorry, and lets it rest. Later it grows strong.",
+          "Rest: the seeds grow quietly, hidden in their pillows."
+        ]
+      },
+      {
+        "moment": "What to do while waiting",
+        "options": [
+          "Draw a picture of the garden (Button draws a very square circle).",
+          "Sing a growing song to the plants."
+        ]
+      }
+    ],
+    "talk": [
+      "What is something that's hard to wait for?",
+      "What can we do to help the waiting go by?",
+      "What do plants need to grow?"
+    ]
+  },
+  "state": {
+    "plant": "lettuce",
+    "peeked": "no",
+    "waitFun": "draw"
+  },
+  "start": "p1",
+  "pages": {
+    "p1": {
+      "art": {
+        "place": "garden",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "plants-0"
+        ]
+      },
+      "beats": [
+        {
+          "say": "In a cozy corner of Star Station, there is a tiny garden."
+        },
+        {
+          "say": "It glows pink and purple, like a sunset in a box."
+        },
+        {
+          "say": "\"Why is it pink?\" asked {a}."
+        },
+        {
+          "say": "\"Plants need light to grow,\" said Button. \"Our garden has special red lights and blue lights. Together, they make our garden glow pink and purple!\""
+        },
+        {
+          "say": "\"And plants need water, too. Light and water help plants grow.\""
+        },
+        {
+          "say": "{T}, can you turn on the garden lights? Tap anywhere!",
+          "tap": {
+            "effect": "growlights",
+            "count": 3
+          }
+        },
+        {
+          "say": "\"Real astronauts have grown lettuce in space,\" said Button. \"And they ate it, too!\""
+        }
+      ],
+      "choice": {
+        "say": "{A}, what should we grow in our space garden?",
+        "options": [
+          {
+            "card": "lettuce",
+            "label": "Lettuce",
+            "say": "Crunchy green lettuce?",
+            "next": "p2",
+            "set": {
+              "plant": "lettuce"
+            }
+          },
+          {
+            "card": "zinnia",
+            "label": "Flowers",
+            "say": "Or bright orange flowers, called zinnias?",
+            "next": "p2",
+            "set": {
+              "plant": "zinnia"
+            }
+          }
+        ]
+      }
+    },
+    "p2": {
+      "art": {
+        "place": "garden",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "plants-0",
+          "seed-packet-$plant"
+        ]
+      },
+      "beats": [
+        {
+          "if": {
+            "plant": "lettuce"
+          },
+          "say": "Lettuce it is! Crunch, crunch!"
+        },
+        {
+          "if": {
+            "plant": "zinnia"
+          },
+          "say": "Zinnias it is! Real astronauts have grown zinnia flowers in space, too."
+        },
+        {
+          "say": "In space, seeds grow in little plant pillows. Soft and puffy, and filled with special soil."
+        },
+        {
+          "say": "{T}, can you tuck the seeds into their pillows? Tap each pillow!",
+          "do": {
+            "targets": "pillows"
+          }
+        },
+        {
+          "say": "One, two, three. All tucked in. Sleep tight, little seeds.",
+          "art": {
+            "props": [
+              "plants-seeded"
+            ]
+          }
+        }
+      ],
+      "next": "p3"
+    },
+    "p3": {
+      "art": {
+        "place": "garden",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "plants-seeded",
+          "pouch"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Now the seeds need a drink."
+        },
+        {
+          "say": "Button gave the water pouch a gentle squeeze. Out came a wobbly, wiggly ball of water!",
+          "art": {
+            "props": [
+              "plants-seeded",
+              "pouch",
+              "water-ball"
+            ]
+          },
+          "sfx": "blup"
+        },
+        {
+          "say": "\"In space, water floats in wobbly little balls,\" said Button. \"So we water our plants very, very carefully.\""
+        },
+        {
+          "say": "{A}, can you help? Tap the water pouch. Gently, three times.",
+          "do": {
+            "targets": "pouch"
+          }
+        },
+        {
+          "say": "Blup. Blup. Blup. A drink for every seed."
+        }
+      ],
+      "next": "p4"
+    },
+    "p4": {
+      "art": {
+        "place": "garden",
+        "crew": "look",
+        "robot": "happy",
+        "props": [
+          "plants-seeded"
+        ]
+      },
+      "beats": [
+        {
+          "say": "And now... we wait."
+        },
+        {
+          "say": "{t} looked at the pillows. Nothing. Not one tiny leaf."
+        },
+        {
+          "say": "{t} looked again. Still nothing."
+        },
+        {
+          "say": "\"Grow, seeds! Grow!\" said {t}."
+        },
+        {
+          "say": "\"Seeds take time,\" said Button. \"Lots and lots of time.\""
+        },
+        {
+          "say": "{T}, can you give the seeds a little wave? Tap anywhere!",
+          "tap": {
+            "effect": "sparkle",
+            "count": 3
+          }
+        },
+        {
+          "say": "Waiting is hard. It's very, very hard."
+        }
+      ],
+      "choice": {
+        "say": "{A}, what should we do?",
+        "options": [
+          {
+            "card": "dig",
+            "label": "Peek",
+            "say": "Dig up a seed, and take a peek?",
+            "next": "p5-peek",
+            "set": {
+              "peeked": "yes"
+            }
+          },
+          {
+            "card": "rest",
+            "label": "Wait",
+            "say": "Or let the seeds rest, and wait?",
+            "next": "p5-rest"
+          }
+        ]
+      }
+    },
+    "p5-peek": {
+      "art": {
+        "place": "garden",
+        "crew": "look",
+        "robot": "worry",
+        "props": [
+          "plants-seeded",
+          "seed-peek"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} dug gently into one pillow, to take a peek."
+        },
+        {
+          "say": "And there was the seed! It had a teeny, tiny root, as thin as a hair. It was just starting to grow."
+        },
+        {
+          "say": "But out of its cozy pillow, the little root began to droop."
+        },
+        {
+          "say": "\"Oh dear,\" said Button softly. \"Little roots like to stay tucked in.\""
+        },
+        {
+          "say": "So, gently, gently, {crew} tucked the seed back into its pillow.",
+          "art": {
+            "props": [
+              "plants-seeded"
+            ]
+          }
+        },
+        {
+          "say": "\"Sorry, little seed,\" whispered {a}. \"[We'll|I'll] let you rest now.\""
+        },
+        {
+          "say": "{T}, can you give it a soft little pat? Tap anywhere.",
+          "tap": {
+            "effect": "sparkle",
+            "count": 2
+          }
+        }
+      ],
+      "next": "p6"
+    },
+    "p5-rest": {
+      "art": {
+        "place": "garden",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "plants-seeded",
+          "roots"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} let the seeds rest in their cozy pillows."
+        },
+        {
+          "say": "And deep inside, where no one could see, the seeds were busy."
+        },
+        {
+          "say": "Tiny roots were starting to grow. Down, down, down."
+        }
+      ],
+      "next": "p6"
+    },
+    "p6": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "happy"
+      },
+      "beats": [
+        {
+          "say": "But what can we do while we wait?"
+        },
+        {
+          "say": "{T}, can you make some floaty bubbles while we think? Tap anywhere!",
+          "tap": {
+            "effect": "bubbles",
+            "count": 3
+          }
+        }
+      ],
+      "choice": {
+        "say": "{A}, should we...",
+        "options": [
+          {
+            "card": "draw",
+            "label": "Draw",
+            "say": "Draw a picture of our garden?",
+            "next": "p7",
+            "set": {
+              "waitFun": "draw"
+            }
+          },
+          {
+            "card": "sing-plants",
+            "label": "Sing",
+            "say": "Or sing a growing song to the plants?",
+            "next": "p7",
+            "set": {
+              "waitFun": "sing"
+            }
+          }
+        ]
+      }
+    },
+    "p7": {
+      "art": {
+        "place": "garden",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "plants-seeded"
+        ]
+      },
+      "beats": [
+        {
+          "if": {
+            "waitFun": "draw"
+          },
+          "say": "[{a} drew tall green leaves, and {t} drew a big, round sun with a happy face.|{a} drew tall green leaves, under a big, round, smiling sun.]",
+          "art": {
+            "props": [
+              "plants-seeded",
+              "drawing"
+            ]
+          }
+        },
+        {
+          "if": {
+            "waitFun": "draw"
+          },
+          "say": "Button drew... a very square circle. \"Robots are still learning to draw,\" said Button."
+        },
+        {
+          "if": {
+            "waitFun": "sing"
+          },
+          "say": "Grow, grow, little seed. Here's the light and drink you need!",
+          "art": {
+            "crew": "sing",
+            "props": [
+              "plants-seeded",
+              "notes"
+            ]
+          },
+          "sfx": "song"
+        },
+        {
+          "if": {
+            "waitFun": "sing"
+          },
+          "say": "Button hummed along. Hmmm, beep. Hmmm, boop."
+        },
+        {
+          "say": "And then, the days went by."
+        },
+        {
+          "say": "{T}, can you help the days go by? Every time you tap, we'll sleep and wake up again!",
+          "tap": {
+            "effect": "grow",
+            "count": 5
+          }
+        },
+        {
+          "say": "Lots and lots of sleeps went by. Weeks and weeks."
+        }
+      ],
+      "next": "p7-sprout"
+    },
+    "p7-sprout": {
+      "art": {
+        "place": "garden",
+        "crew": "look",
+        "robot": "happy",
+        "props": [
+          "plants-1"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Then, one morning, {t} floated into the garden, and gasped."
+        },
+        {
+          "say": "\"Look!\" Poking out of a pillow was a teeny, tiny, curly green sprout."
+        },
+        {
+          "say": "{T}, can you say hello to the sprout? Tap it, very gently.",
+          "do": {
+            "targets": "sprout"
+          }
+        },
+        {
+          "say": "\"Hello, sprout,\" whispered Button. \"Welcome to Star Station.\""
+        },
+        {
+          "say": "Every day, the crew gave the plants a little drink. And every day, the plants grew a tiny bit more.",
+          "art": {
+            "props": [
+              "plants-2"
+            ]
+          }
+        }
+      ],
+      "next": "p8"
+    },
+    "p8": {
+      "art": {
+        "place": "garden",
+        "crew": "cheer",
+        "robot": "happy",
+        "props": [
+          "plants-3"
+        ]
+      },
+      "beats": [
+        {
+          "say": "And look! Little green plants, reaching up toward the lights."
+        },
+        {
+          "say": "\"See how the leaves grow toward the light?\" said Button. \"In space, light helps plants know which way to grow.\""
+        },
+        {
+          "if": {
+            "peeked": "yes"
+          },
+          "say": "Even the little seed that took a peek was growing. Slow, and strong."
+        },
+        {
+          "if": {
+            "plant": "lettuce"
+          },
+          "say": "The lettuce grew big, crinkly leaves."
+        },
+        {
+          "if": {
+            "plant": "zinnia"
+          },
+          "say": "The zinnias opened bright orange petals, like tiny suns."
+        },
+        {
+          "say": "{T}, can you give the garden a big hello? Tap anywhere!",
+          "tap": {
+            "effect": "sparkle",
+            "count": 3
+          }
+        }
+      ],
+      "next": "end"
+    },
+    "end": {
+      "art": {
+        "place": "garden",
+        "crew": "cheer",
+        "robot": "happy",
+        "props": [
+          "plants-3",
+          "harvest-$plant"
+        ]
+      },
+      "beats": [
+        {
+          "if": {
+            "plant": "lettuce"
+          },
+          "say": "At last, the lettuce was ready. {crew} took a big bite. Crunch!",
+          "sfx": "crunch"
+        },
+        {
+          "if": {
+            "plant": "lettuce"
+          },
+          "say": "Button couldn't eat lettuce. Robots don't. But Button loved the crunchy sound. \"Again!\" beeped Button."
+        },
+        {
+          "if": {
+            "plant": "zinnia"
+          },
+          "say": "At last, the zinnias were in full bloom. {a} picked one, and gave it to Button."
+        },
+        {
+          "if": {
+            "plant": "zinnia"
+          },
+          "say": "Button tucked the flower behind its antenna. \"How do I look?\" \"Beautiful!\""
+        },
+        {
+          "say": "A message crackled in from Mission Control, far below on the Earth. \"Beautiful garden, Star Station!\"",
+          "sfx": "radio"
+        },
+        {
+          "say": "And in its cozy corner, the little garden glowed pink and purple, growing a tiny bit more every day."
+        }
+      ],
+      "end": true
+    }
+  }
+}

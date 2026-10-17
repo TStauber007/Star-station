@@ -1,0 +1,595 @@
+{
+  "id": "wobbly-panel",
+  "order": 3,
+  "title": "The Wobbly Panel",
+  "titleSay": "Mission three. The Wobbly Panel!",
+  "mood": "day",
+  "sticker": "sun-catcher",
+  "cover": {
+    "place": "orbit",
+    "time": "day",
+    "lights": "on",
+    "robot": "none"
+  },
+  "parent": {
+    "virtue": "Honesty and owning mistakes",
+    "science": [
+      "Solar panels turn sunshine into power (electricity).",
+      "The station's big solar wings make power for the lights and computers, and they turn to face the Sun.",
+      "In Earth's shadow, the station runs on batteries that the solar panels charged in sunlight."
+    ],
+    "summary": "While playing, the crew accidentally bumps the little solar panel that charges Button. Tell, or hide it?",
+    "paths": [
+      {
+        "moment": "What to play",
+        "options": [
+          "Floating somersaults, or Bouncy Space Ball. Either way, there's an accidental bump."
+        ]
+      },
+      {
+        "moment": "Tell Button, or hide the wobbly panel",
+        "options": [
+          "Tell: Button says thank you, and they fix it together.",
+          "Hide: Button can't charge, gets slow and sleepy, and thinks it broke its own charger. The crew's tummies feel wiggly; they tell Button the truth and say sorry. Then they fix it together."
+        ]
+      },
+      {
+        "moment": "Which way to turn the panel",
+        "options": [
+          "Toward the window and the Sun: the green light comes on.",
+          "Toward the wall: no sunshine, just a sock. They try the other way."
+        ]
+      }
+    ],
+    "talk": [
+      "How did the crew feel inside when the panel was hidden?",
+      "Why do you think Button said thank you?",
+      "What do solar panels need to make power?"
+    ]
+  },
+  "state": {
+    "game": "somersault",
+    "hid": "no"
+  },
+  "start": "p1",
+  "pages": {
+    "p1": {
+      "art": {
+        "place": "orbit",
+        "time": "day",
+        "lights": "on",
+        "props": [
+          "wings-glint"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Star Station has two big, shiny wings. They're made of solar panels."
+        },
+        {
+          "say": "Solar panels turn sunshine into power."
+        },
+        {
+          "say": "Power for the lights. Power for the computers. And power for Button!"
+        },
+        {
+          "say": "{T}, can you help the wings catch the sunshine? Tap, tap, tap!",
+          "tap": {
+            "effect": "sunbeams",
+            "count": 4
+          }
+        },
+        {
+          "say": "Inside, by a window, there's one more little solar panel. It's called the Sun Catcher. It charges Button's batteries."
+        }
+      ],
+      "next": "p1b"
+    },
+    "p1b": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "charge",
+        "props": [
+          "suncatcher-on",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Every morning, Button plugs in to the Sun Catcher, and charges up its batteries."
+        },
+        {
+          "say": "The Sun Catcher's little green light means: sunshine coming in, power going out!"
+        },
+        {
+          "say": "\"Mmmm,\" said Button. \"Sunshine breakfast.\""
+        },
+        {
+          "say": "{T}, can you help Button wake up all the way? Tap anywhere!",
+          "tap": {
+            "effect": "boop",
+            "count": 3
+          }
+        },
+        {
+          "say": "\"Beep boop! All charged!\" Button zoomed off to the garden, humming.",
+          "art": {
+            "robot": "none"
+          }
+        }
+      ],
+      "next": "p2"
+    },
+    "p2": {
+      "art": {
+        "place": "hub",
+        "crew": "cheer",
+        "robot": "none",
+        "props": [
+          "suncatcher-ok",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Today was a playing day. Button was busy in the garden, humming to the plants."
+        },
+        {
+          "say": "\"Let's play a game!\" said {a}."
+        }
+      ],
+      "choice": {
+        "say": "{A}, what should we play?",
+        "options": [
+          {
+            "card": "somersault",
+            "label": "Somersaults",
+            "say": "Floating somersaults?",
+            "next": "p3",
+            "set": {
+              "game": "somersault"
+            }
+          },
+          {
+            "card": "ball",
+            "label": "Space Ball",
+            "say": "Or Bouncy Space Ball?",
+            "next": "p3",
+            "set": {
+              "game": "ball"
+            }
+          }
+        ]
+      }
+    },
+    "p3": {
+      "art": {
+        "place": "hub",
+        "crew": "tumble",
+        "robot": "none",
+        "props": [
+          "suncatcher-ok",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "if": {
+            "game": "somersault"
+          },
+          "say": "{T}, can you help us spin? Tap anywhere!",
+          "tap": {
+            "effect": "spin",
+            "count": 3
+          }
+        },
+        {
+          "if": {
+            "game": "ball"
+          },
+          "say": "{T}, can you help bounce the ball? Tap anywhere!",
+          "tap": {
+            "effect": "bounce",
+            "count": 3
+          }
+        },
+        {
+          "if": {
+            "game": "somersault"
+          },
+          "say": "Round and round went {crew}. One somersault. Two somersaults. Three somer... BUMP!",
+          "sfx": "bump"
+        },
+        {
+          "if": {
+            "game": "somersault"
+          },
+          "say": "A foot bumped right into the Sun Catcher."
+        },
+        {
+          "if": {
+            "game": "ball"
+          },
+          "say": "Boing! went the ball, off the wall. Boing! off the ceiling. Boing... BONK!",
+          "art": {
+            "props": [
+              "suncatcher-ok",
+              "window-sun",
+              "ball"
+            ]
+          },
+          "sfx": "bump"
+        },
+        {
+          "if": {
+            "game": "ball"
+          },
+          "say": "Right into the Sun Catcher."
+        },
+        {
+          "say": "Wobble, wobble, wobble. The little panel tipped sideways. Its happy green light went out.",
+          "art": {
+            "crew": "worry",
+            "props": [
+              "suncatcher-wobbly",
+              "window-sun"
+            ]
+          },
+          "sfx": "wobble"
+        },
+        {
+          "say": "Uh oh."
+        },
+        {
+          "say": "Nobody else had seen. Button was still busy in the garden."
+        }
+      ],
+      "choice": {
+        "say": "{A}, the Sun Catcher is wobbly. What should we do?",
+        "options": [
+          {
+            "card": "tell",
+            "label": "Tell Button",
+            "say": "Tell Button what happened?",
+            "next": "p4-tell"
+          },
+          {
+            "card": "hide",
+            "label": "Hide it",
+            "say": "Or hide it behind the curtain?",
+            "next": "p4-hide",
+            "set": {
+              "hid": "yes"
+            }
+          }
+        ]
+      }
+    },
+    "p4-hide": {
+      "art": {
+        "place": "hub",
+        "crew": "worry",
+        "robot": "none",
+        "props": [
+          "curtain"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} pulled the little curtain across. Swish. Now nobody could see the wobbly panel.",
+          "sfx": "swish"
+        },
+        {
+          "say": "But {a}'s tummy felt wiggly, and funny."
+        },
+        {
+          "say": "A little later, Button floated over to charge.",
+          "art": {
+            "robot": "happy"
+          }
+        },
+        {
+          "say": "Button plugged in. Nothing happened."
+        },
+        {
+          "say": "\"Huh?\" said Button. Its voice was getting slow, and sleepy. \"My... batteries... are... low...\"",
+          "art": {
+            "robot": "sleepy"
+          },
+          "sfx": "powerdown"
+        },
+        {
+          "say": "\"Oh no,\" said Button. \"Did I break my charger? Is it my fault?\""
+        },
+        {
+          "say": "Button's eyes drooped. Its tummy light flickered."
+        },
+        {
+          "say": "Now {a}'s tummy felt even wigglier. Button thought it was Button's fault. But it wasn't."
+        },
+        {
+          "say": "[{a} took a big breath, and {t} held on tight.|{a} took a big, deep breath.]"
+        },
+        {
+          "say": "\"Button, it's not your fault,\" said {a}. \"[We|I] bumped the Sun Catcher, and it got wobbly. And then [we|I] hid it. [We're|I'm] sorry.\""
+        }
+      ],
+      "next": "p5"
+    },
+    "p4-tell": {
+      "art": {
+        "place": "garden",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "plants-3"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} floated straight to the garden."
+        },
+        {
+          "say": "\"Button,\" said {a}, \"[we|I] bumped the Sun Catcher by accident. Now it's wobbly.\""
+        },
+        {
+          "say": "Button stopped humming, and listened, very carefully."
+        }
+      ],
+      "next": "p5"
+    },
+    "p5": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "suncatcher-wobbly",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "if": {
+            "hid": "yes"
+          },
+          "say": "Button opened the little curtain, very slowly. \"Ohhh. So that's what happened.\"",
+          "art": {
+            "robot": "sleepy"
+          }
+        },
+        {
+          "say": "Button's eyes went wide. And then they curved into two happy smiles.",
+          "art": {
+            "robot": "happy"
+          }
+        },
+        {
+          "say": "\"Thank you for telling me,\" said Button. \"Bumps happen. Let's fix it together!\""
+        },
+        {
+          "say": "{T}, can you give Button a happy boop? Tap anywhere!",
+          "tap": {
+            "effect": "boop",
+            "count": 3
+          }
+        }
+      ],
+      "next": "p6"
+    },
+    "p6": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "fix",
+        "props": [
+          "suncatcher-wobbly",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "say": "First, the panel needs to hold still. {T}, can you hold it steady? Tap the panel!",
+          "do": {
+            "targets": "panel"
+          }
+        },
+        {
+          "say": "Good holding! Steady, steady."
+        },
+        {
+          "say": "Now, {A}, can you tighten the bolts? Tap each one. One, two, three!",
+          "do": {
+            "targets": "bolts"
+          }
+        },
+        {
+          "say": "Click. Click. Click. Not wobbly anymore!",
+          "art": {
+            "props": [
+              "suncatcher-fixed-off",
+              "window-sun"
+            ]
+          }
+        }
+      ],
+      "next": "p7"
+    },
+    "p7": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "suncatcher-fixed-off",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "say": "But the green light was still off."
+        },
+        {
+          "say": "\"Solar panels work best when they face the Sun,\" said Button. \"Out there, the station's big wings turn to face the Sun.\""
+        }
+      ],
+      "choice": {
+        "say": "{A}, which way should we turn the Sun Catcher?",
+        "options": [
+          {
+            "card": "face-window",
+            "label": "The window",
+            "say": "Toward the window?",
+            "next": "p8-sun"
+          },
+          {
+            "card": "face-wall",
+            "label": "The wall",
+            "say": "Or toward the wall?",
+            "next": "p8-wall"
+          }
+        ]
+      }
+    },
+    "p8-wall": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "suncatcher-wall",
+          "window-sun",
+          "sock-velcro"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} turned the panel toward the wall. Hmm. The light stayed off."
+        },
+        {
+          "say": "\"No sunshine over here,\" said Button. \"Just a sock.\""
+        },
+        {
+          "say": "\"Let's try the other way!\""
+        }
+      ],
+      "next": "p8-sun"
+    },
+    "p8-sun": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "suncatcher-fixed-off",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} turned the panel toward the window, where the Sun was shining bright."
+        },
+        {
+          "say": "Blink! The happy green light came on!",
+          "art": {
+            "props": [
+              "suncatcher-on",
+              "window-sun"
+            ]
+          },
+          "sfx": "chime"
+        },
+        {
+          "say": "\"Power!\" cheered Button.",
+          "art": {
+            "crew": "cheer"
+          }
+        }
+      ],
+      "next": "p9"
+    },
+    "p9": {
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "charge",
+        "props": [
+          "suncatcher-on",
+          "window-sun"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Button plugged in to charge."
+        },
+        {
+          "say": "{T}, can you help Button charge up? Tap, tap, tap!",
+          "tap": {
+            "effect": "charge",
+            "count": 5
+          }
+        },
+        {
+          "say": "Beep. Beep, beep. Beep, boop! Button was full of power again.",
+          "art": {
+            "robot": "happy"
+          }
+        },
+        {
+          "say": "Button zoomed around in a happy loop.",
+          "art": {
+            "robot": "spin"
+          },
+          "sfx": "whirl"
+        }
+      ],
+      "next": "p10"
+    },
+    "p10": {
+      "art": {
+        "place": "orbit",
+        "time": "night",
+        "lights": "on"
+      },
+      "beats": [
+        {
+          "say": "Just then, the station sailed into Earth's shadow. Outside, it got dark."
+        },
+        {
+          "say": "\"Will our lights go out?\" asked {t}."
+        },
+        {
+          "say": "\"Nope!\" said Button. \"In the dark, the station uses batteries. Batteries that our solar wings filled up in the sunshine.\""
+        }
+      ],
+      "next": "end"
+    },
+    "end": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "hold",
+        "robot": "happy",
+        "props": [
+          "suncatcher-on"
+        ]
+      },
+      "beats": [
+        {
+          "say": "The station lights glowed warm and cozy, powered by sunshine saved up for later."
+        },
+        {
+          "say": "Button gave {crew} a soft, beepy hug. Beep."
+        },
+        {
+          "say": "And by the window, the little Sun Catcher sat straight and steady, waiting for the next sunrise."
+        },
+        {
+          "say": "It wouldn't have to wait long."
+        }
+      ],
+      "end": true
+    }
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "id": "goodnight-earth",
+  "order": 6,
+  "title": "Goodnight, Earth",
+  "titleSay": "Mission six. Goodnight, Earth.",
+  "mood": "bedtime",
+  "speed": 0.74,
+  "sticker": "sleepy-star",
+  "cover": {
+    "place": "sleep",
+    "time": "night",
+    "crew": "bed",
+    "robot": "rest"
+  },
+  "parent": {
+    "virtue": "Gratitude",
+    "science": [
+      "Astronauts sleep in sleeping bags tied to the wall, so they don't float around.",
+      "In space there's no up or down, so you can sleep any way you like.",
+      "Some astronauts wear eye masks to sleep, to keep out the many sunrises.",
+      "From the station, astronauts can see auroras: ribbons of green light near the top and bottom of the world.",
+      "At night, cities on the Earth glow like tiny golden sparkles."
+    ],
+    "summary": "A slow, quiet bedtime on the station: pajamas, teeth, sleeping bags on the wall, a thank-you for the day, and goodnight to the Earth.",
+    "paths": [
+      {
+        "moment": "Pajamas or teeth first",
+        "options": [
+          "Either order; both get done."
+        ]
+      },
+      {
+        "moment": "Sleep right side up or upside down",
+        "options": [
+          "Right side up: snug as a bug.",
+          "Upside down: lots of giggles, because in space upside down is just another way up."
+        ]
+      },
+      {
+        "moment": "What are you thankful for?",
+        "options": [
+          "Our beautiful Earth.",
+          "Our friend Button (Button's tummy light glows pink)."
+        ]
+      }
+    ],
+    "talk": [
+      "What is one thing you're thankful for today?",
+      "Who would you like to say thank you to?",
+      "How do astronauts sleep without floating away?"
+    ]
+  },
+  "state": {
+    "first": "pajamas",
+    "sleep": "up",
+    "thanks": "earth"
+  },
+  "start": "p1",
+  "pages": {
+    "p1": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "lights": "bedtime",
+        "crew": "float",
+        "robot": "happy"
+      },
+      "beats": [
+        {
+          "say": "The day is done on Star Station."
+        },
+        {
+          "say": "The lights are low and soft, like a nightlight."
+        },
+        {
+          "say": "Outside the window, the Earth glows quietly."
+        },
+        {
+          "say": "{T}, can you give the Earth a sleepy wave? Tap anywhere.",
+          "tap": {
+            "effect": "hello",
+            "count": 3
+          }
+        },
+        {
+          "say": "It's time to get ready for bed."
+        }
+      ],
+      "choice": {
+        "say": "{A}, what should we do first?",
+        "options": [
+          {
+            "card": "pajamas",
+            "label": "Pajamas",
+            "say": "Put on cozy pajamas?",
+            "next": "p2",
+            "set": {
+              "first": "pajamas"
+            }
+          },
+          {
+            "card": "toothbrush",
+            "label": "Teeth",
+            "say": "Or brush our teeth?",
+            "next": "p2",
+            "set": {
+              "first": "teeth"
+            }
+          }
+        ]
+      }
+    },
+    "p2": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "lights": "bedtime",
+        "crew": "pajamas",
+        "robot": "happy"
+      },
+      "beats": [
+        {
+          "if": {
+            "first": "pajamas"
+          },
+          "say": "First, cozy pajamas. One sleeve. Two sleeves. A pajama leg floated up, like a balloon."
+        },
+        {
+          "if": {
+            "first": "pajamas"
+          },
+          "say": "Then, teeth. Brush, brush, brush. Little circles."
+        },
+        {
+          "if": {
+            "first": "teeth"
+          },
+          "say": "First, teeth. Brush, brush, brush. Little circles."
+        },
+        {
+          "if": {
+            "first": "teeth"
+          },
+          "say": "Then, cozy pajamas. One sleeve. Two sleeves. A pajama leg floated up, like a balloon."
+        },
+        {
+          "say": "Button doesn't have any teeth. So Button polished its screen, until it shone."
+        },
+        {
+          "say": "{T}, can you help turn the lights down? Tap, and watch them dim, one by one.",
+          "tap": {
+            "effect": "dim",
+            "count": 4
+          }
+        },
+        {
+          "say": "There. Soft, and sleepy."
+        }
+      ],
+      "next": "p2-drink"
+    },
+    "p2-drink": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "lights": "bedtime-dim",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "drink-pouch"
+        ]
+      },
+      "beats": [
+        {
+          "say": "A little drink of water before bed."
+        },
+        {
+          "say": "In space, drinks come in pouches, with a straw. That way, the water doesn't float away in wobbly balls."
+        },
+        {
+          "say": "Sip, sip. Ahhh."
+        },
+        {
+          "say": "Then a soft crackle came from the radio. It was Mission Control, calling from the Earth.",
+          "sfx": "radio"
+        },
+        {
+          "say": "\"Goodnight, Star Station,\" said Mission Control. \"Thank you for all your good work today.\""
+        },
+        {
+          "say": "\"Goodnight, Mission Control,\" said {crew}. \"Thank you for helping us.\""
+        }
+      ],
+      "next": "p3"
+    },
+    "p3": {
+      "art": {
+        "place": "sleep",
+        "time": "night",
+        "crew": "bed",
+        "robot": "happy"
+      },
+      "beats": [
+        {
+          "say": "This is where the crew sleeps."
+        },
+        {
+          "say": "In space, we sleep in sleeping bags tied to the wall, so we don't float away while we dream."
+        },
+        {
+          "say": "{crew} wiggled into [their sleeping bags|a sleeping bag]. Zip. Zip.",
+          "sfx": "zip"
+        },
+        {
+          "say": "\"In space, there's no up or down,\" said Button. \"You can sleep any way you like.\""
+        }
+      ],
+      "choice": {
+        "say": "{A}, how should we sleep tonight?",
+        "options": [
+          {
+            "card": "right-side-up",
+            "label": "Right side up",
+            "say": "Right side up?",
+            "next": "p4",
+            "set": {
+              "sleep": "up"
+            }
+          },
+          {
+            "card": "upside-down",
+            "label": "Upside down",
+            "say": "Or upside down?",
+            "next": "p4",
+            "set": {
+              "sleep": "down"
+            }
+          }
+        ]
+      }
+    },
+    "p4": {
+      "art": {
+        "place": "sleep",
+        "time": "night",
+        "crew": "bed-$sleep",
+        "robot": "happy"
+      },
+      "beats": [
+        {
+          "if": {
+            "sleep": "up"
+          },
+          "say": "Right side up. Snug as a bug."
+        },
+        {
+          "if": {
+            "sleep": "down"
+          },
+          "say": "Upside down! {t} giggled. And then everybody giggled."
+        },
+        {
+          "if": {
+            "sleep": "down"
+          },
+          "say": "\"In space, upside down is just another way up,\" said Button."
+        },
+        {
+          "say": "{T}, can you give your sleeping bag a cozy pat? Tap anywhere.",
+          "tap": {
+            "effect": "sparkle",
+            "count": 3
+          }
+        },
+        {
+          "say": "Button put on a little sleep mask. \"Some astronauts wear eye masks,\" said Button, \"to keep the sunrises out.\"",
+          "art": {
+            "robot": "mask"
+          }
+        }
+      ],
+      "next": "p5"
+    },
+    "p5": {
+      "art": {
+        "place": "sleep",
+        "time": "night",
+        "crew": "bed-$sleep",
+        "robot": "mask"
+      },
+      "beats": [
+        {
+          "say": "Before they sleep, the crew of Star Station says thank you, for one thing from today."
+        }
+      ],
+      "choice": {
+        "say": "{A}, what are you thankful for tonight?",
+        "options": [
+          {
+            "card": "thanks-earth",
+            "label": "The Earth",
+            "say": "Our beautiful Earth?",
+            "next": "p6",
+            "set": {
+              "thanks": "earth"
+            }
+          },
+          {
+            "card": "thanks-button",
+            "label": "Button",
+            "say": "Or our friend, Button?",
+            "next": "p6",
+            "set": {
+              "thanks": "button"
+            }
+          }
+        ]
+      }
+    },
+    "p6": {
+      "art": {
+        "place": "sleep",
+        "time": "night",
+        "crew": "bed-$sleep",
+        "robot": "rest"
+      },
+      "beats": [
+        {
+          "if": {
+            "thanks": "earth"
+          },
+          "say": "\"Thank you, Earth,\" said {a}, \"for the blue oceans, and the white clouds.\""
+        },
+        {
+          "if": {
+            "thanks": "button"
+          },
+          "say": "\"Thank you, Button,\" said {a}, \"for being [our|my] friend.\""
+        },
+        {
+          "if": {
+            "thanks": "button"
+          },
+          "say": "Button's tummy light glowed a soft, happy pink.",
+          "art": {
+            "robot": "glow"
+          }
+        },
+        {
+          "say": "[{t} thought, and thought. \"Thank you, stars!\" said {t}.|\"And thank you, stars,\" said {a}.]"
+        },
+        {
+          "say": "{T}, can you make the stars twinkle a thank-you? Tap anywhere.",
+          "tap": {
+            "effect": "twinkle",
+            "count": 4
+          }
+        },
+        {
+          "say": "Button was thankful, too. \"Thank you,\" said Button softly, \"for my crew.\""
+        }
+      ],
+      "next": "p6-stars"
+    },
+    "p6-stars": {
+      "art": {
+        "place": "sleep",
+        "time": "night",
+        "crew": "bed-$sleep",
+        "robot": "rest",
+        "props": [
+          "count-stars"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Outside the little window, the stars were shining."
+        },
+        {
+          "say": "{A}, can you count the stars with me? Tap each star, slowly.",
+          "do": {
+            "targets": "count-stars"
+          }
+        },
+        {
+          "say": "One. Two. Three. Four. Five. Five sleepy stars."
+        },
+        {
+          "say": "{crew} gave a big, slow yawn. Even Button gave a little beepy yawn. Beeeep."
+        }
+      ],
+      "next": "p7"
+    },
+    "p7": {
+      "art": {
+        "place": "sleep",
+        "time": "night",
+        "crew": "bed-$sleep",
+        "robot": "rest",
+        "props": [
+          "aurora"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Out the little window, far below, ribbons of green light began to dance, over the top of the world."
+        },
+        {
+          "say": "\"An aurora,\" whispered Button. \"Astronauts can see them from up here.\""
+        },
+        {
+          "say": "And all across the dark Earth, the cities glowed like tiny sparkles of gold and white."
+        }
+      ],
+      "next": "end"
+    },
+    "end": {
+      "art": {
+        "place": "sleep",
+        "time": "night",
+        "lights": "off",
+        "crew": "bed-$sleep",
+        "robot": "dream",
+        "props": [
+          "aurora"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Goodnight, oceans. Goodnight, clouds."
+        },
+        {
+          "say": "Goodnight, little city lights. Goodnight, stars."
+        },
+        {
+          "say": "\"Goodnight, Button.\" \"Beep,\" whispered Button. \"Goodnight.\""
+        },
+        {
+          "say": "[Goodnight, {A}. Goodnight, {T}.|Goodnight, {A}.]"
+        },
+        {
+          "say": "And goodnight, Earth."
+        },
+        {
+          "say": "Star Station sailed on through the quiet, starry dark, around and around the world, carrying its sleepy crew."
+        }
+      ],
+      "end": true
+    }
+  }
+}

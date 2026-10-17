@@ -1,0 +1,552 @@
+{
+  "id": "night-side-noises",
+  "order": 5,
+  "title": "Night-Side Noises",
+  "titleSay": "Mission five. Night-Side Noises!",
+  "mood": "day",
+  "sticker": "flashlight",
+  "cover": {
+    "place": "orbit",
+    "time": "sunset",
+    "lights": "on"
+  },
+  "parent": {
+    "virtue": "Courage, and helping someone who is scared",
+    "science": [
+      "The station goes all the way around the Earth in about an hour and a half, so astronauts see about sixteen sunrises every day.",
+      "On the night side, the station is in Earth's shadow; city lights glow on the Earth below.",
+      "Fans hum all day and night, because in space air doesn't move around by itself.",
+      "The water machine cleans water so it can be used again and again.",
+      "Night in orbit is short: the Sun comes back in about half an hour."
+    ],
+    "summary": "The station sails into Earth's shadow and starts making noises. Button is scared. The crew helps Button find out what each noise is.",
+    "paths": [
+      {
+        "moment": "How to help Button",
+        "options": [
+          "Hold Button's hand.",
+          "Turn on the flashlight."
+        ]
+      },
+      {
+        "moment": "Where the clinking is",
+        "options": [
+          "Behind the big blue bag, or under the table: either way, it's a floating spoon."
+        ]
+      },
+      {
+        "moment": "Go look together, or hide under the blanket",
+        "options": [
+          "Together: hand in hand, they float to the dark tunnel.",
+          "Blanket: it's dark and stuffy, and the gurgle doesn't stop. Button bravely peeks out and suggests going together."
+        ]
+      }
+    ],
+    "talk": [
+      "What helped Button feel less scared?",
+      "What can you do when a friend is scared?",
+      "How many sunrises do astronauts see in one day?"
+    ]
+  },
+  "state": {
+    "help": "hand",
+    "looked": "bag",
+    "hid": "no"
+  },
+  "start": "p1",
+  "pages": {
+    "p1": {
+      "art": {
+        "place": "orbit",
+        "time": "day",
+        "lights": "on"
+      },
+      "beats": [
+        {
+          "say": "Star Station zooms around the Earth so fast, it goes all the way around in about an hour and a half."
+        },
+        {
+          "say": "That means a sunrise, and a sunset, again and again. Astronauts see about sixteen sunrises every single day!"
+        },
+        {
+          "say": "And right now, the Sun was setting."
+        },
+        {
+          "say": "{T}, can you help the sunset? Tap, tap, tap, and watch the colors change!",
+          "tap": {
+            "effect": "sunset",
+            "count": 4
+          }
+        },
+        {
+          "say": "The station sailed into Earth's shadow, on the night side of the world.",
+          "art": {
+            "time": "night"
+          }
+        }
+      ],
+      "next": "p2"
+    },
+    "p2": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "float",
+        "robot": "happy"
+      },
+      "beats": [
+        {
+          "say": "Inside, the lights turned soft and dim. Nighttime lights."
+        },
+        {
+          "say": "And then, the station started to make noises."
+        },
+        {
+          "say": "Hmmmmmmmm.",
+          "sfx": "hum"
+        },
+        {
+          "say": "Clink. Clink.",
+          "sfx": "clink"
+        },
+        {
+          "say": "Gurgle, gurgle, gurgle.",
+          "sfx": "gurgle"
+        },
+        {
+          "say": "\"B-b-beep,\" said Button. \"What was that?\"",
+          "art": {
+            "robot": "scared"
+          }
+        },
+        {
+          "say": "Button zipped behind {crew}, and peeked out, all wobbly."
+        },
+        {
+          "say": "Button was scared."
+        }
+      ],
+      "choice": {
+        "say": "{A}, Button is scared. How can we help?",
+        "options": [
+          {
+            "card": "hold-hand",
+            "label": "Hold hands",
+            "say": "Hold Button's hand?",
+            "next": "p3",
+            "set": {
+              "help": "hand"
+            }
+          },
+          {
+            "card": "flashlight",
+            "label": "Flashlight",
+            "say": "Or turn on the flashlight?",
+            "next": "p3",
+            "set": {
+              "help": "light"
+            }
+          }
+        ]
+      }
+    },
+    "p3": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "hold",
+        "robot": "scared"
+      },
+      "beats": [
+        {
+          "if": {
+            "help": "hand"
+          },
+          "say": "[{a} held one of Button's hands, and {t} held the other.|{a} held Button's hand, nice and tight.]"
+        },
+        {
+          "if": {
+            "help": "hand"
+          },
+          "say": "\"[We're|I'm] right here,\" said {a}. \"Let's find out what the noises are. Together.\""
+        },
+        {
+          "if": {
+            "help": "light"
+          },
+          "say": "Click! {a} switched on the flashlight. A warm circle of light glowed on the wall.",
+          "art": {
+            "props": [
+              "flashlight-on"
+            ]
+          },
+          "sfx": "click"
+        },
+        {
+          "if": {
+            "help": "light"
+          },
+          "say": "\"There,\" said {a}. \"Now we can see. Let's find out what the noises are. Together.\""
+        },
+        {
+          "say": "Button stopped wobbling. Just a little.",
+          "art": {
+            "robot": "brave"
+          }
+        },
+        {
+          "say": "Hmmmmmmmm. The first noise was coming from a little grille in the wall.",
+          "sfx": "hum"
+        },
+        {
+          "say": "\"Oh! That's a fan,\" said Button. \"In space, air doesn't swirl around by itself, like it does on Earth. So fans keep the fresh air blowing, all day and all night.\""
+        },
+        {
+          "say": "{T}, can you feel the breeze? Tap anywhere, and make it swirl!",
+          "tap": {
+            "effect": "breeze",
+            "count": 4
+          }
+        },
+        {
+          "say": "Button giggled. \"The fan tickles!\"",
+          "art": {
+            "robot": "giggle"
+          }
+        }
+      ],
+      "next": "p4"
+    },
+    "p4": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "float",
+        "robot": "brave",
+        "props": [
+          "bag",
+          "table"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Clink. Clink. Clink.",
+          "sfx": "clink"
+        },
+        {
+          "say": "\"Where is that coming from?\" whispered Button."
+        }
+      ],
+      "choice": {
+        "say": "{A}, where should we look?",
+        "options": [
+          {
+            "card": "bag",
+            "label": "The blue bag",
+            "say": "Behind the big blue bag?",
+            "next": "p5-bag",
+            "set": {
+              "looked": "bag"
+            }
+          },
+          {
+            "card": "table",
+            "label": "The table",
+            "say": "Or under the table?",
+            "next": "p5-table",
+            "set": {
+              "looked": "table"
+            }
+          }
+        ]
+      }
+    },
+    "p5-bag": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "look",
+        "robot": "brave",
+        "props": [
+          "bag",
+          "table",
+          "spoon-bag"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} peeked behind the big blue bag."
+        },
+        {
+          "say": "Clink. Clink. And there it was! A floating spoon, bumping softly against the wall.",
+          "sfx": "clink"
+        },
+        {
+          "say": "{T}, can you make the spoon go clink? Tap anywhere!",
+          "tap": {
+            "effect": "clink",
+            "count": 3
+          }
+        }
+      ],
+      "next": "p6"
+    },
+    "p5-table": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "look",
+        "robot": "brave",
+        "props": [
+          "bag",
+          "table",
+          "spoon-table"
+        ]
+      },
+      "beats": [
+        {
+          "say": "{crew} peeked under the table."
+        },
+        {
+          "say": "Clink. Clink. And there it was! A floating spoon, tapping against a table leg.",
+          "sfx": "clink"
+        },
+        {
+          "say": "{T}, can you make the spoon go clink? Tap anywhere!",
+          "tap": {
+            "effect": "clink",
+            "count": 3
+          }
+        }
+      ],
+      "next": "p6"
+    },
+    "p6": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "bag",
+          "table",
+          "spoon-$looked"
+        ]
+      },
+      "beats": [
+        {
+          "say": "\"Somebody forgot to Velcro the spoon!\" said Button."
+        },
+        {
+          "say": "{T}, can you stick the spoon back on the Velcro? Tap the spoon!",
+          "do": {
+            "targets": "spoon"
+          }
+        },
+        {
+          "say": "Rrrip... stick! No more clinking.",
+          "art": {
+            "props": [
+              "bag",
+              "table",
+              "spoon-velcro"
+            ]
+          },
+          "sfx": "velcro"
+        },
+        {
+          "say": "Two noises found. One more to go."
+        },
+        {
+          "say": "Gurgle, gurgle, gurgle. It came from the dark tunnel at the end of the station.",
+          "sfx": "gurgle",
+          "art": {
+            "robot": "scared"
+          }
+        },
+        {
+          "say": "Button's antenna wobbled."
+        }
+      ],
+      "choice": {
+        "say": "{A}, what should we do?",
+        "options": [
+          {
+            "card": "go-together",
+            "label": "Go together",
+            "say": "Go and look, together?",
+            "next": "p7-together"
+          },
+          {
+            "card": "blanket",
+            "label": "Hide",
+            "say": "Or hide under the blanket?",
+            "next": "p7-blanket",
+            "set": {
+              "hid": "yes"
+            }
+          }
+        ]
+      }
+    },
+    "p7-blanket": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "blanket",
+        "robot": "blanket"
+      },
+      "beats": [
+        {
+          "say": "{crew} and Button dove under a big, floaty blanket.",
+          "sfx": "swish"
+        },
+        {
+          "say": "It was very dark under there. And a little bit stuffy."
+        },
+        {
+          "say": "Gurgle, gurgle, gurgle, went the noise. Hiding didn't make it stop.",
+          "sfx": "gurgle"
+        },
+        {
+          "say": "\"I still don't know what it is,\" said Button, in a tiny voice."
+        },
+        {
+          "say": "Then Button did something brave. Button peeked out from under the blanket.",
+          "art": {
+            "robot": "brave"
+          }
+        },
+        {
+          "say": "\"If we go together,\" said Button, \"I think I can do it.\""
+        }
+      ],
+      "next": "p8"
+    },
+    "p7-together": {
+      "art": {
+        "place": "hub",
+        "time": "night",
+        "crew": "hold",
+        "robot": "brave"
+      },
+      "beats": [
+        {
+          "say": "\"Let's go together,\" said {a}."
+        },
+        {
+          "say": "Button took a big breath. Well, robots don't really breathe. But it was a big breath, anyway."
+        }
+      ],
+      "next": "p8"
+    },
+    "p8": {
+      "art": {
+        "place": "tunnel",
+        "time": "night",
+        "crew": "hold",
+        "robot": "brave",
+        "props": [
+          "water-machine"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Hand in hand, they floated into the dark tunnel."
+        },
+        {
+          "say": "Gurgle, gurgle... GURGLE!",
+          "sfx": "gurgle"
+        },
+        {
+          "say": "And there it was. A big white box, with little green lights, blinking."
+        },
+        {
+          "say": "\"It's the water machine!\" said Button. \"It cleans our water, so we can use it again and again.\"",
+          "art": {
+            "robot": "happy"
+          }
+        },
+        {
+          "say": "\"Gurgle,\" said the water machine, very politely.",
+          "sfx": "gurgle"
+        },
+        {
+          "say": "Button laughed. \"I was scared of a water machine!\"",
+          "art": {
+            "robot": "giggle"
+          }
+        },
+        {
+          "say": "{T}, can you say hello to the water machine? Tap anywhere!",
+          "tap": {
+            "effect": "bubbles",
+            "count": 3
+          }
+        }
+      ],
+      "next": "p9"
+    },
+    "p9": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "look",
+        "props": [
+          "city-lights"
+        ]
+      },
+      "beats": [
+        {
+          "say": "Back at the big window, the Earth was dark. But not all dark."
+        },
+        {
+          "say": "Down below, tiny lights glowed, gold and white. \"Cities,\" whispered Button. \"Where people are sleeping.\""
+        },
+        {
+          "say": "Night on the station doesn't last long. Soon, in less than an hour, the Sun comes back."
+        },
+        {
+          "say": "{T}, can you help the Sun come up? Tap, tap, tap!",
+          "tap": {
+            "effect": "sunrise",
+            "count": 4
+          }
+        },
+        {
+          "say": "A thin line of orange light glowed along the edge of the Earth. Then gold. Then bright, bright blue.",
+          "art": {
+            "time": "sunrise"
+          }
+        },
+        {
+          "say": "Sunrise!",
+          "sfx": "chime"
+        }
+      ],
+      "next": "end"
+    },
+    "end": {
+      "art": {
+        "place": "cupola",
+        "time": "day",
+        "crew": "hold",
+        "robot": "happy"
+      },
+      "beats": [
+        {
+          "say": "\"I was scared,\" said Button. \"But you stayed with me. And now I know all the noises.\""
+        },
+        {
+          "say": "Hmmmmmm, hummed the fans. Gurgle, said the water machine.",
+          "sfx": "hum"
+        },
+        {
+          "say": "And this time, Button hummed right along."
+        }
+      ],
+      "end": true
+    }
+  }
+}
