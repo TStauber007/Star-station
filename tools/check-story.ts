@@ -1,7 +1,7 @@
 // Story checker: format, templates, reachability, paths, Tommy moments, timing.
 //   node tools/check-story.ts            check everything
 //   node tools/check-story.ts --print    also print every variant of every line
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Mission } from '../src/story/types.ts';
 import { allPaths, PathError } from '../src/story/paths.ts';
@@ -13,9 +13,8 @@ const print = process.argv.includes('--print');
 const errors: string[] = [];
 const warnings: string[] = [];
 
-let vocab: Record<string, string[]> | null = null;
-const vocabPath = join(ROOT, 'src/art/vocab.json');
-if (existsSync(vocabPath)) vocab = JSON.parse(readFileSync(vocabPath, 'utf8'));
+import { VOCAB } from '../src/art/vocab.ts';
+const vocab = VOCAB as Record<string, string[]>;
 
 export function loadMissions(): Mission[] {
   const dir = join(ROOT, 'content/missions');

@@ -70,14 +70,15 @@ class Kokoro:
     @staticmethod
     def timestamps(tokens, pred_dur):
         """Port of kokoro's join_timestamps: duration frames are 600 samples
-        (1/40 s); counting half-frames lets spaces split in two."""
+        (1/40 s); counting half-frames lets spaces split in two. Returns every
+        token (text + whitespace) with start/end seconds, or None if silent."""
         DIV = 80
-        out = []
+        out = [{"text": t.text, "ws": t.whitespace, "start": None, "end": None} for t in tokens]
         if not tokens or len(pred_dur) < 3:
             return out
         left = right = 2 * max(0, pred_dur[0] - 3)
         i = 1
-        for t in tokens:
+        for k, t in enumerate(tokens):
             if i >= len(pred_dur) - 1:
                 break
             if not t.phonemes:
@@ -97,5 +98,5 @@ class Kokoro:
             end = left / DIV
             right = left + space_dur
             i = j + (1 if t.whitespace else 0)
-            out.append({"text": t.text, "start": round(start, 3), "end": round(end, 3)})
+            out[k]["start"], out[k]["end"] = float(start), float(end)
         return out

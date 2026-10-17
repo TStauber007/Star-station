@@ -11,7 +11,7 @@
     "preview": "vite preview --host --port 4173",
     "serve:lan": "vite preview --host 0.0.0.0 --port 4173",
     "check:story": "node tools/check-story.ts",
-    "narration": "tools/tts/.venv/bin/python tools/tts/render_narration.py",
+    "narration": "node tools/narration.ts jobs && tools/tts/.venv/bin/python tools/tts/render_narration.py && node tools/narration.ts manifest",
     "verify:paths": "node tools/verify/walk-paths.mjs",
     "verify:screens": "node tools/verify/screenshots.mjs",
     "verify:privacy": "node tools/verify/privacy.mjs",
