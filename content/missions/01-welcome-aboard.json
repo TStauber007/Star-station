@@ -20,7 +20,7 @@
       "Why astronauts float: the station is always falling around the Earth, and everything inside falls with it.",
       "Earth looks blue from space because most of it is covered with water; the white swirls are clouds.",
       "Handrails and Velcro keep astronauts and their things from floating away.",
-      "Astronauts eat tortillas instead of bread, so there are no floating crumbs."
+      "Astronauts usually eat tortillas instead of bread, so there are fewer floating crumbs."
     ],
     "summary": "A shy new helper robot arrives on a supply ship. The crew says hello, shows Button around, and throws a welcome party.",
     "paths": [
@@ -336,7 +336,7 @@
           "say": "Just then, the big window at the end of the station began to glow, blue and bright."
         },
         {
-          "say": "The Earth was coming into view! It's the best view on the whole station."
+          "say": "The Sun was shining on the Earth below! It's the best view on the whole station."
         },
         {
           "say": "{crew} wanted to see it right away."
@@ -429,7 +429,7 @@
           "say": "[{a} took one of Button's hands, and {t} took the other.|{a} took Button's little hand.]"
         },
         {
-          "say": "Together, they floated down the station. Past the handrails. Past the Velcro patches."
+          "say": "Together, they floated along the station. Past the handrails. Past the Velcro patches."
         },
         {
           "say": "And Button's tummy light glowed brighter, and brighter."

@@ -118,6 +118,7 @@ export class MissionPlayer {
     if (sig.cancelled) return;
     this.phase = 'end'; this.probe.phase = 'end';
     this.turn.hide();
+    this.caption.hide();
     const sticker = resolveSticker(this.m.sticker, this.state);
     this.hooks.onFinished(this.m, sticker, this.stage);
   }

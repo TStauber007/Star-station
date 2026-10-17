@@ -3,62 +3,63 @@
 Status keys: `[ ]` open · `[~]` in progress · `[x]` done
 
 ## Foundation
-- [ ] Vite + TypeScript project, minimal dependencies, licenses recorded
-- [ ] Story data format (plain JSON per mission) + validator
-- [ ] Engine: pages, beats, choices, tap-anything moments, hands-on moments, endings
-- [ ] Settings in local storage only (names, avatars, crew mode, volume, captions, lights-out)
+- [x] Vite + TypeScript project, minimal dependencies, licenses recorded
+- [x] Story data format (plain JSON per mission) + validator
+- [x] Engine: pages, beats, choices, tap-anything moments, hands-on moments, endings
+- [x] Settings in local storage only (names, avatars, crew mode, volume, captions, lights-out)
 
 ## Story
-- [ ] docs/STORY_BIBLE.md (characters, world, tone, how to add a mission)
-- [ ] Mission 1 — Welcome Aboard
-- [ ] Mission 2 — The Space Garden
-- [ ] Mission 3 — The Wobbly Panel
-- [ ] Mission 4 — One Window, Two Friends
-- [ ] Mission 5 — The Dark Side Noises
-- [ ] Mission 6 — Goodnight, Earth (bedtime)
-- [ ] Each mission: 3–4 choice points, reconverging branches, warm ending, 6–10 min
-- [ ] Tommy "tap anything" moment in every scene stretch
-- [ ] Hands-on moments (water, stars, panel…) in every mission
+- [x] docs/STORY_BIBLE.md (characters, world, tone, how to add a mission)
+- [x] Mission 1 — Welcome Aboard
+- [x] Mission 2 — The Space Garden
+- [x] Mission 3 — The Wobbly Panel
+- [x] Mission 4 — Turns at the Telescope (renamed, see DECISIONS D-010)
+- [x] Mission 5 — Night-Side Noises (renamed, see DECISIONS D-010)
+- [x] Mission 6 — Goodnight, Earth (bedtime)
+- [x] Each mission: 3–4 choice points, reconverging branches, warm ending, 6–10 min
+- [x] Tommy "tap anything" moment in every scene stretch
+- [x] Hands-on moments (water, stars, panel…) in every mission
 
 ## Narration
-- [ ] Open-source TTS pipeline (build time only), license recorded
-- [ ] Every line rendered for every crew setup (named two-crew, solo Abigail, solo Tommy, generic two-crew, generic solo)
-- [ ] Word timings for highlighting
-- [ ] Pause / replay / caption toggle
+- [x] Open-source TTS pipeline (build time only), license recorded
+- [x] Every line rendered for every crew setup (named two-crew, solo Abigail, solo Tommy, generic two-crew, generic solo)
+- [x] Word timings for highlighting
+- [x] Pause / replay / caption toggle
 
 ## Look & sound
-- [ ] Code-drawn SVG art: station places, Earth, Moon, crew, robot, props
-- [ ] Consistent characters, gentle motion, 60 fps-friendly layers
-- [ ] Parent-pickable avatars (no photos)
-- [ ] Procedural ambient music + gentle effects (Web Audio), low default volume
-- [ ] Portrait + landscape, big targets (≥ 88 px)
+- [x] Code-drawn SVG art: station places, Earth, Moon, crew, robot, props
+- [x] Consistent characters, gentle motion, 60 fps-friendly layers
+- [x] Parent-pickable avatars (no photos)
+- [x] Procedural ambient music + gentle effects (Web Audio), low default volume
+- [x] Portrait + landscape, big targets (≥ 88 px)
 
 ## Calm design
-- [ ] Calm ending screen, no autoplay into next mission
-- [ ] One keepsake sticker per finished mission on the station wall
-- [ ] No points/coins/streaks/timers/hooks
-- [ ] "One mission, then lights out" mode
+- [x] Calm ending screen, no autoplay into next mission
+- [x] One keepsake sticker per finished mission on the station wall
+- [x] No points/coins/streaks/timers/hooks
+- [x] "One mission, then lights out" mode
 
 ## Parent page
-- [ ] Hold-to-enter grown-up gate
-- [ ] Names, avatars, crew mode, volume, captions, lights-out
-- [ ] Per-mission: virtue, science, paths, talk-about questions
-- [ ] Science sources
+- [x] Hold-to-enter grown-up gate
+- [x] Names, avatars, crew mode, volume, captions, lights-out
+- [x] Per-mission: virtue, science, paths, talk-about questions
+- [x] Science sources
 
 ## Build
-- [ ] Installable offline PWA (service worker + manifest + icons)
-- [ ] Zero runtime network calls (CSP + check)
-- [ ] docs/INSTALL.md (private hosting + home-PC options)
+- [x] Installable offline PWA (service worker + manifest + icons)
+- [x] Zero runtime network calls (CSP + check)
+- [x] docs/INSTALL.md (private hosting + home-PC options)
 
 ## Verification (results in docs/QA.md)
-- [ ] Every-path walker: all paths end, all cues have audio, no dead ends
-- [ ] Playwright screenshots: 1024×768, 768×1024, 1280×800 (10" Android) for every scene — reviewed and fixed
-- [ ] Read-aloud check with logged cuts
-- [ ] Independent science check by subagent, flags fixed
-- [ ] Privacy check: zero network requests in an offline context
+- [~] Every-path walker: all paths end, all cues have audio, no dead ends
+- [~] Playwright screenshots: 1024×768, 768×1024, 1280×800 (10" Android) for every scene — reviewed and fixed
+- [x] Read-aloud check with logged cuts
+- [~] Independent science check by subagent, flags fixed
+- [x] Privacy check: zero network requests in an offline context
 
 ## Docs
-- [ ] README.md (two-minute parent guide)
-- [ ] docs/SCIENCE_SOURCES.md
-- [ ] docs/LICENSES.md
-- [ ] DECISIONS.md, PROGRESS.md current
+- [ ] docs/QA.md with every verification result
+- [x] README.md (two-minute parent guide)
+- [x] docs/SCIENCE_SOURCES.md
+- [x] docs/LICENSES.md
+- [~] DECISIONS.md, PROGRESS.md current

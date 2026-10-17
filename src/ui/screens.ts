@@ -92,9 +92,11 @@ export function homeScreen(s: Settings, nav: Nav, opts: { greet: boolean }): { e
     detail.append(panel, close);
     detail.classList.remove('hidden');
     requestAnimationFrame(() => detail.classList.add('open'));
+    // the big title on the card is the caption here, so the words never cover the Go button
+    caption.setVisible(false);
     void narrator.say(titleKey(m));
     go.addEventListener('click', () => { narrator.stop(); nav.play(m); }, { once: true });
-    const shut = () => { narrator.stop(); caption.hide(); detail.classList.remove('open'); setTimeout(() => detail.classList.add('hidden'), 300); };
+    const shut = () => { narrator.stop(); caption.hide(); caption.setVisible(s.captions); detail.classList.remove('open'); setTimeout(() => detail.classList.add('hidden'), 300); };
     close.addEventListener('click', shut);
     detail.addEventListener('click', (e) => { if (e.target === detail) shut(); });
   }

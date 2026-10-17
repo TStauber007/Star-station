@@ -132,7 +132,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .target.turned { border-style: solid; }
 
 /* ---------------------------------------------------------- captions */
-.caption { position: absolute; left: 50%; bottom: calc(14px + var(--safe-b)); transform: translateX(-50%); width: min(92vw, 1000px); background: rgba(255, 250, 240, 0.95); border-radius: 30px; padding: 14px 28px 16px; box-shadow: var(--shadow); z-index: 20; transition: opacity 0.3s; }
+.caption { pointer-events: none; position: absolute; left: 50%; bottom: calc(14px + var(--safe-b)); transform: translateX(-50%); width: min(92vw, 1000px); background: rgba(255, 250, 240, 0.95); border-radius: 30px; padding: 14px 28px 16px; box-shadow: var(--shadow); z-index: 20; transition: opacity 0.3s; }
 .caption-text { margin: 0; font-size: clamp(20px, calc(2.4vmin + 9px), 34px); line-height: 1.38; font-weight: 400; text-align: center; color: var(--ink); }
 .caption .w { border-radius: 10px; padding: 0 3px; margin: 0 -3px; transition: background 0.12s; }
 .caption .w.on { background: var(--sun-soft); box-shadow: 0 0 0 3px var(--sun-soft); }
@@ -154,7 +154,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .paused .resume .icon { width: 76px; height: 76px; }
 
 /* whose turn */
-.turn { position: absolute; bottom: calc(150px + var(--safe-b)); display: flex; align-items: center; gap: 10px; padding: 8px 22px 8px 8px; background: var(--paper); border-radius: 60px; box-shadow: var(--shadow), 0 0 0 5px var(--sun); z-index: 21; animation: turnin 0.5s ease; }
+.turn { pointer-events: none; position: absolute; bottom: calc(150px + var(--safe-b)); display: flex; align-items: center; gap: 10px; padding: 8px 22px 8px 8px; background: var(--paper); border-radius: 60px; box-shadow: var(--shadow), 0 0 0 5px var(--sun); z-index: 21; animation: turnin 0.5s ease; }
 .turn.left { left: calc(18px + var(--safe-l)); }
 .turn.right { right: calc(18px + var(--safe-r)); flex-direction: row-reverse; padding: 8px 8px 8px 22px; }
 .turn-face { width: 76px; height: 76px; border-radius: 50%; background: #e9f2ff; overflow: hidden; }
@@ -163,7 +163,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 @keyframes turnin { from { transform: translateY(20px); opacity: 0; } }
 
 /* title card */
-.title-card { position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%); background: rgba(255, 250, 240, 0.94); border-radius: 36px; padding: 24px 48px 30px; text-align: center; box-shadow: var(--shadow); z-index: 15; animation: turnin 0.8s ease; max-width: 88vw; }
+.title-card { pointer-events: none; position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%); background: rgba(255, 250, 240, 0.94); border-radius: 36px; padding: 24px 48px 30px; text-align: center; box-shadow: var(--shadow); z-index: 15; animation: turnin 0.8s ease; max-width: 88vw; }
 .title-num { font-size: 26px; color: var(--ink-soft); font-weight: 700; letter-spacing: 0.04em; }
 .title-name { font-size: clamp(36px, 6vmin, 64px); font-weight: 700; line-height: 1.1; margin-top: 6px; }
 
@@ -283,6 +283,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .avatar-preview { width: 120px; height: 168px; flex: none; background: #e9f2ff; border-radius: 20px; }
 .avatar-preview svg { width: 100%; height: 100%; }
 .child-name { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.child-name .pill { align-self: flex-start; }
 .child-name input { font: inherit; font-size: 24px; padding: 10px 14px; border-radius: 14px; border: 2px solid #d8ccb2; background: #fff; width: 100%; max-width: 360px; -webkit-user-select: text; user-select: text; }
 .name-note { color: var(--ink-soft); }
 .picker { display: flex; align-items: center; gap: 12px; margin: 12px 0; flex-wrap: wrap; }

@@ -72,11 +72,11 @@ server.close();
 await ctx.setOffline(true);
 await page.reload();
 await page.waitForTimeout(800);
-await page.click('.big-go');                 // splash: tap to start
+await page.locator('.big-go').click({ force: true }); // splash: tap to start
 await page.waitForTimeout(1500);
-await page.click('.mcard >> nth=0');        // mission 1
+await page.locator('.mcard').first().click({ force: true }); // mission 1
 await page.waitForTimeout(800);
-await page.click('.detail .big-go');        // go!
+await page.locator('.detail .big-go').click({ force: true }); // go!
 await page.waitForTimeout(16000);           // listen to the title and first lines
 const state = await page.evaluate(() => ({ probe: window.__ss, audio: !!document.querySelector('.caption .w') }));
 result.offlinePlay = state;

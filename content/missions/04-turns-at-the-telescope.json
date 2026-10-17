@@ -315,7 +315,7 @@
           "say": "\"Let's watch the Moon every night,\" said {a}. \"And take turns going first.\""
         },
         {
-          "say": "{T}, can you help the nights go by? Tap, and watch the Moon grow!",
+          "say": "{T}, can you help the nights go by? Tap, and watch the Moon change shape!",
           "tap": {
             "effect": "moon",
             "count": 2

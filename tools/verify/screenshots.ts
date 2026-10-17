@@ -74,6 +74,14 @@ async function check(page: Page): Promise<string[]> {
         if (!el.classList.contains('target')) out.push(`off-screen ${el.className} ${Math.round(r.left)},${Math.round(r.top)},${Math.round(r.right)},${Math.round(r.bottom)}`);
       }
     });
+    // every button a child might tap must really be tappable at its centre
+    kidTargets.forEach((el) => {
+      if (!vis(el) || (el as HTMLButtonElement).disabled) return;
+      const r = el.getBoundingClientRect();
+      const cx = Math.min(vw - 2, Math.max(1, r.left + r.width / 2)), cy = Math.min(vh - 2, Math.max(1, r.top + r.height / 2));
+      const top = document.elementFromPoint(cx, cy);
+      if (top && top !== el && !el.contains(top)) out.push(`covered button ${el.className} (by ${top.className || top.tagName})`);
+    });
     document.querySelectorAll('.target').forEach((el) => {
       const r = el.getBoundingClientRect();
       const cx = r.left + r.width / 2, cy = r.top + r.height / 2;

@@ -83,7 +83,7 @@ Notes in *italics* say what happens on screen. **Choice** pages show two picture
 ### Page `p6`
 
 - Just then, the big window at the end of the station began to glow, blue and bright.
-- The Earth was coming into view! It's the best view on the whole station.
+- The Sun was shining on the Earth below! It's the best view on the whole station.
 - Abigail and Tommy wanted to see it right away.
 
 **Choice:** Abigail, what should we do?
@@ -107,7 +107,7 @@ Notes in *italics* say what happens on screen. **Choice** pages show two picture
 
 - "Come with us, Button!" said Abigail. "We'll show you the way."
 - Abigail took one of Button's hands, and Tommy took the other.
-- Together, they floated down the station. Past the handrails. Past the Velcro patches.
+- Together, they floated along the station. Past the handrails. Past the Velcro patches.
 - And Button's tummy light glowed brighter, and brighter.
 
 *Turn the page → `p8`*
@@ -220,7 +220,7 @@ Notes in *italics* say what happens on screen. **Choice** pages show two picture
 
 - Abigail and Tommy dug gently into one pillow, to take a peek.
 - And there was the seed! It had a teeny, tiny root, as thin as a hair. It was just starting to grow.
-- But out of its cozy pillow, the little root began to dry out.
+- But the little root didn't like being out of its cozy pillow.
 - "Oh dear," said Button softly. "Little roots like to stay tucked in."
 - So, gently, gently, Abigail and Tommy tucked the seed back into its pillow.
 - "Sorry, little seed," whispered Abigail. "We'll let you rest now."
@@ -269,7 +269,7 @@ Notes in *italics* say what happens on screen. **Choice** pages show two picture
 
 ### Page `p8`
 
-- And look! Little green plants, reaching up toward the lights.
+- And look! Little green plants, reaching toward the lights.
 - "See how the leaves grow toward the light?" said Button. "In space, light helps plants know which way to grow."
 - Even the little seed that took a peek was growing. Slow, and strong. *(only if peeked = yes)*
 - The lettuce grew big, crinkly leaves. *(only if plant = lettuce)*
@@ -504,7 +504,7 @@ Notes in *italics* say what happens on screen. **Choice** pages show two picture
 ### Page `p6`
 
 - "Let's watch the Moon every night," said Abigail. "And take turns going first."
-- Tommy, can you help the nights go by? Tap, and watch the Moon grow! *(Tommy taps anywhere 2 times: moon)*
+- Tommy, can you help the nights go by? Tap, and watch the Moon change shape! *(Tommy taps anywhere 2 times: moon)*
 - A thin crescent. Then a half moon. Then a big, bulgy, almost-full moon.
 - And each night, a different friend went first.
 - It takes the Moon about a month to go through all its shapes, from dark, to full, and back again.
@@ -696,7 +696,7 @@ Notes in *italics* say what happens on screen. **Choice** pages show two picture
 ### Page `p9`
 
 - Back at the big window, the Earth was dark. But not all dark.
-- Down below, tiny lights glowed, gold and white. "Cities," whispered Button. "Where people are sleeping."
+- Down below, tiny lights glowed, gold and white. "Cities," whispered Button. "Where lots of people are sleeping."
 - Night on the station doesn't last long. Soon, in less than an hour, the Sun comes back.
 - Tommy, can you help the Sun come up? Tap, tap, tap! *(Tommy taps anywhere 4 times: sunrise)*
 - A thin line of orange light glowed along the edge of the Earth. Then gold. Then bright, bright blue.

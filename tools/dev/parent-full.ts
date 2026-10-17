@@ -1,0 +1,15 @@
+import { chromium } from '@playwright/test';
+import { serveDist } from '../verify/serve.ts';
+const { url, server } = await serveDist();
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 900, height: 7000 } });
+await p.goto(`${url}/#qa=parent`);
+await p.waitForTimeout(800);
+await p.evaluate(() => document.querySelectorAll('details').forEach((d, i) => { if (i < 2) (d as HTMLDetailsElement).open = true; }));
+await p.waitForTimeout(300);
+const h = await p.evaluate(() => (document.querySelector('.parent') as HTMLElement).scrollHeight);
+await p.setViewportSize({ width: 900, height: Math.min(h, 16000) });
+await p.waitForTimeout(300);
+await p.screenshot({ path: process.argv[2] });
+console.log('height', h);
+await b.close(); server.close();

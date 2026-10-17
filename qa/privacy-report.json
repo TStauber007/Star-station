@@ -1,0 +1,77 @@
+{
+  "urlHostsInBuild": {
+    "www.w3.org": 1,
+    "www.nasa.gov": 1,
+    "oceanservice.noaa.gov": 1,
+    "science.nasa.gov": 1,
+    "astrobiology.nasa.gov": 1,
+    "earthobservatory.nasa.gov": 1,
+    "ntrs.nasa.gov": 1,
+    "www.esa.int": 1,
+    "robotics.nasa.gov": 1,
+    "blogs.nasa.gov": 1,
+    "extension.oregonstate.edu": 1,
+    "www.britannica.com": 1,
+    "www.ncbi.nlm.nih.gov": 1,
+    "www.eia.gov": 1,
+    "spaceplace.nasa.gov": 1,
+    "apod.nasa.gov": 1,
+    "esrs.jsc.nasa.gov": 1,
+    "nasa.gov": 1,
+    "spaceflight.nasa.gov": 1,
+    "www.ucdavis.edu": 1
+  },
+  "networkApisInCode": [],
+  "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'",
+  "citationHostsShownAsText": [
+    "www.nasa.gov",
+    "oceanservice.noaa.gov",
+    "science.nasa.gov",
+    "astrobiology.nasa.gov",
+    "earthobservatory.nasa.gov",
+    "ntrs.nasa.gov",
+    "www.esa.int",
+    "robotics.nasa.gov",
+    "blogs.nasa.gov",
+    "extension.oregonstate.edu",
+    "www.britannica.com",
+    "www.ncbi.nlm.nih.gov",
+    "www.eia.gov",
+    "spaceplace.nasa.gov",
+    "apod.nasa.gov",
+    "esrs.jsc.nasa.gov",
+    "nasa.gov",
+    "spaceflight.nasa.gov",
+    "www.ucdavis.edu"
+  ],
+  "offlineCache": {
+    "expected": 910,
+    "cached": 910
+  },
+  "offlinePlay": {
+    "probe": {
+      "mission": "welcome-aboard",
+      "page": "p1",
+      "beat": 2,
+      "phase": "line",
+      "state": {
+        "shipColor": "yellow",
+        "raced": "no"
+      },
+      "path": [
+        "p1"
+      ]
+    },
+    "audio": true
+  },
+  "offlineRequests": {
+    "total": 12,
+    "servedFromOfflineCache": 12,
+    "narrationClips": 7
+  },
+  "onlineRequests": {
+    "total": 5,
+    "otherHosts": 0
+  },
+  "problems": []
+}

@@ -25,6 +25,15 @@ Sources:
 - [What is Microgravity? — NASA Glenn Research Center](https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity/): the station is so close to Earth that gravity there is only about 10% weaker; the station, astronaut and objects are "all falling together."
 - [What Is Microgravity? (Grades 5-8) — NASA](https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-microgravity-grades-5-8/): calling it "zero gravity" is misleading.
 
+**F1.10 — In microgravity, long hair doesn't hang down; it floats out around the head.**
+Kid line (p2):
+
+> Abigail's hair floats out in every direction.
+
+Sources:
+- [Astronaut Hygiene: How to Wash Your Hair In Space (Video) — Space.com](https://space.com/21946-how-to-wash-hair-space-video.html): NASA video (July 2013) of Expedition 36 astronaut Karen Nyberg on the International Space Station, her hair floating around her as she washes it with a water pouch and no-rinse shampoo.
+- [How to Wash Your Hair in Space — Nextgov](https://nextgov.com/emerging-tech/2013/07/how-wash-your-hair-space/66443): in orbit her loose hair "takes on a life of its own", spreading into a "hair halo".
+
 **F1.2 — From space, Earth looks mostly blue because most of Earth's surface (about 71%) is covered by ocean.**
 Kid line (p8):
 
@@ -89,7 +98,7 @@ Kid line (p11):
 
 Sources:
 - [Food on the International Space Station — NASA History](https://www.nasa.gov/history/space-station-20th-food-on-iss/): tortillas, "unlike regular bread, didn't create crumbs"; bread crumbs could drift through the cabin and harm equipment.
-- [NASA Spaceflight Q&A — NASA](https://robotics.nasa.gov/spaceflight-qa/): "crumbs float around in microgravity and can get in crewmembers' eyes or foul air filters and electronic equipment."
+- [NASA Spaceflight Q&A — NASA](https://robotics.nasa.gov/spaceflight-qa/): "crumbs float around in microgravity and can get in crewmembers' eyes or foul air filters and electronic equipment." *(This page could not be confirmed in a 2026 search and may have moved; the other source(s) here support the same fact.)*
 - [Space Food — Houston We Have a Podcast, NASA](https://www.nasa.gov/podcasts/houston-we-have-a-podcast/space-food/): a NASA food scientist says the station does get one kind of long-lasting bread, but tortillas are the usual choice. That's why the kid line says "usually."
 
 **F1.8 — Uncrewed cargo spacecraft (such as Russia's Progress and SpaceX's cargo Dragon) dock with the ISS and deliver food, water and other supplies.**
@@ -139,7 +148,7 @@ Kid line (p1; also end):
 > And in its cozy corner, the little garden glowed pink and purple, growing a tiny bit more every day.
 
 Sources:
-- [Veggie Plant Growth System Activated on International Space Station — NASA](https://www.nasa.gov/missions/station/veggie-plant-growth-system-activated-on-international-space-station/): Veggie has red, blue and green LEDs. Plants reflect a lot of green light and use more red and blue, so the Veggie chamber "typically glows magenta pink."
+- [Veggie Plant Growth System Activated on International Space Station — NASA](https://www.nasa.gov/missions/station/veggie-plant-growth-system-activated-on-international-space-station/): Veggie has red, blue and green LEDs. Plants reflect a lot of green light and use more red and blue, so the Veggie chamber glows a magenta-pink colour (paraphrased).
 - [Veggie fact sheet (PDF) — NASA](https://www.nasa.gov/wp-content/uploads/2019/04/veggie_fact_sheet_508.pdf): each Veggie chamber has a light array of red, blue and green LEDs.
 
 **F2.3 — Astronauts on the ISS grew red romaine lettuce and ate some (August 2015).**
@@ -168,7 +177,7 @@ Sources:
 **F2.5 — In space, plant leaves and stems grow toward the light (light helps plants know which way to grow when there's no "down").**
 Kid line (p8):
 
-> And look! Little green plants, reaching up toward the lights.
+> And look! Little green plants, reaching toward the lights.
 
 > "See how the leaves grow toward the light?" said Button. "In space, light helps plants know which way to grow."
 
@@ -202,7 +211,7 @@ Sources:
 - [First Flower Grown in Space Station's Veggie Facility — NASA](https://www.nasa.gov/image-article/first-flower-grown-space-stations-veggie-facility-2/): on Jan. 16, 2016, Commander Scott Kelly shared photos of a blooming zinnia in the Veggie garden.
 - [Zinnia Flowers from International Space Station Yield Seeds for Future Experiments — NASA Kennedy blog](https://blogs.nasa.gov/kennedy/2016/07/22/zinnia-flowers-from-international-space-station-yield-seeds-for-future-experiments/): the experiment began Nov. 16, 2015; the flowers were harvested Feb. 14, 2016 and sent back to Earth.
 - [ZINNIAS FROM SPACE! — NASA](https://www.nasa.gov/humans-in-space/zinnias-from-space-nasa-studies-the-multiple-benefits-of-gardening/): Scott Kelly cleaned mold off the overwatered zinnias and nursed the survivors back until they flowered.
-- No source checked the colour of the space zinnias. "Bright orange" is a story detail (zinnias come in many colours, orange among them).
+- [NASA shows off its 1st zinnia to bloom on the space station — CBC News](https://amp.cbc.ca/news/trending/nasa-space-flowers-1.3410777) and [First Space Zinnia Blooms and Catches Sun's Rays on Space Station — Universe Today](https://www.universetoday.com/articles/first-space-zinnia-blooms-and-catches-suns-rays-on-space-station): Scott Kelly's January 2016 photos show the bloom was orange, so "bright orange flowers" matches the real space zinnia.
 
 **F2.8 — When a seed starts to grow, a tiny root usually comes out first. In space there is no "down" for roots to follow; light, water and food in the growing material guide them instead.**
 Kid line (p5-peek, p5-rest):
@@ -373,7 +382,7 @@ Kid line (p1):
 
 Sources:
 - [Spot the Station Frequently Asked Questions — NASA](https://www.nasa.gov/missions/station/spot-the-station-frequently-asked-questions/): the station goes around Earth about once every 90 minutes.
-- [Space Station Orbit Tutorial — NASA Johnson Space Center](https://esrs.jsc.nasa.gov/Tools/orbitTutorial.htm): each orbit takes 90–93 minutes, depending on the station's height.
+- [Space Station Orbit Tutorial — NASA Johnson Space Center](https://esrs.jsc.nasa.gov/Tools/orbitTutorial.htm): each orbit takes 90–93 minutes, depending on the station's height. *(This page could not be confirmed in a 2026 search and may have moved; the other source(s) here support the same fact.)*
 
 **F5.2 — So the crew sees about 16 sunrises and 16 sunsets every day.**
 Kid line (p1):
@@ -391,7 +400,7 @@ Kid line (p1, p9):
 
 > Back at the big window, the Earth was dark. But not all dark.
 
-> Down below, tiny lights glowed, gold and white. "Cities," whispered Button. "Where people are sleeping."
+> Down below, tiny lights glowed, gold and white. "Cities," whispered Button. "Where lots of people are sleeping."
 
 Sources:
 - [APOD 2008 February 28: ISS: Sunlight to Shadow — NASA Science](https://science.nasa.gov/image-article/apod-2008-february-28-iss-sunlight-to-shadow/): the station slides into Earth's shadow once every orbit.
@@ -462,7 +471,7 @@ Kid line (p3):
 
 Sources:
 - [Sleeping in space — ESA Space for Kids](https://www.esa.int/kids/en/learn/Life_in_Space/Living_in_space/Sleeping_in_space): "There is no up or down, and everything is weightless."
-- [Space Sleep — NASA Human Space Flight](https://spaceflight.nasa.gov/living/spacesleep/index.html): astronauts are weightless and "can sleep in any orientation," but they must attach themselves so they don't drift into things.
+- [Space Sleep — NASA Human Space Flight](https://spaceflight.nasa.gov/living/spacesleep/index.html): astronauts are weightless and "can sleep in any orientation," but they must attach themselves so they don't drift into things. *(This page could not be confirmed in a 2026 search and may have moved; the other source(s) here support the same fact.)*
 
 **F6.3 — Astronauts sometimes use eye masks and earplugs to sleep (frequent sunrises; noisy fans).**
 Kid line (p4):
@@ -555,3 +564,9 @@ No fact was false. These are the facts whose kid line or adult wording changed, 
     - **M1 p2**, "Abigail's hair floats up, up, up." and **M6 p2**, "A pajama leg floated up, like a balloon." In orbit nothing floats "up." Hair spreads out all around the head, and things drift every which way; balloons rise on Earth for a different reason (lighter than air). Now: "Abigail's hair floats out in every direction." and "A pajama leg floated off, all by itself."
     - Optional, **M2 p5-peek**, "the little root began to droop." Drooping hints at gravity; out of its wet pillow, a root would dry out. Now: "the little root began to dry out."
 15. **Checking method:** every link here came up in web searches on 2026-10-17, with text that supports the fact. The pages could not be opened directly from the build sandbox. Click through each link once before release.
+
+---
+
+## Independent science check (2026-10-17)
+
+A separate reviewer, given only `docs/SCRIPT.md` and this file, checked 83 science lines: 78 accurate, 2 needing a fix, 3 without a source, and no age-appropriateness concerns. All five were resolved: "The Earth was coming into view!" became "The Sun was shining on the Earth below!"; "reaching up toward the lights" lost the "up"; floating hair (F1.10) and the orange zinnia (F2.7) now have sources; and "the little root began to dry out" became "the little root didn't like being out of its cozy pillow", which makes no unsourced claim. Three optional suggestions were also taken: "watch the Moon change shape", "floated along the station", and "Where lots of people are sleeping". The full report is in `qa/science-check.md`.

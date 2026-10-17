@@ -1,0 +1,22 @@
+// Dev: walk splash -> home -> mission 1 like a child would, with screenshots.
+import { chromium } from '@playwright/test';
+import { serveDist } from '../verify/serve.ts';
+const out = process.argv[2] ?? '/tmp';
+const { url, server } = await serveDist();
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1024, height: 768 } });
+p.on('pageerror', (e) => console.log('PAGEERROR', String(e)));
+p.on('console', (m) => { if (m.type() !== 'log') console.log('console', m.type(), m.text()); });
+await p.goto(url + '/');
+await p.waitForTimeout(800);
+await p.locator('.big-go').click({ force: true });
+await p.waitForTimeout(1500);
+await p.screenshot({ path: `${out}/flow1-home.png` });
+await p.locator('.mcard').first().click({ force: true });
+await p.waitForTimeout(1000);
+await p.screenshot({ path: `${out}/flow2-detail.png` });
+await p.locator('.detail .big-go').click({ force: true });
+await p.waitForTimeout(6000);
+await p.screenshot({ path: `${out}/flow3-mission.png` });
+console.log(await p.evaluate(() => JSON.stringify(window.__ss)));
+await b.close(); server.close();

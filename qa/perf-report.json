@@ -1,0 +1,47 @@
+{
+  "note": "Headless Chromium, 1280x800 at 2x pixel density, CPU throttled 4x. GPU work is not throttled.",
+  "results": [
+    {
+      "scene": "home",
+      "fps": 57.8,
+      "p95": 16.8,
+      "long": 2
+    },
+    {
+      "scene": "orbit (M1 p1)",
+      "fps": 60.2,
+      "p95": 16.7,
+      "long": 0
+    },
+    {
+      "scene": "hub with crew (M1 p11)",
+      "fps": 60.2,
+      "p95": 16.7,
+      "long": 0
+    },
+    {
+      "scene": "cupola night (M4 p9)",
+      "fps": 60,
+      "p95": 16.7,
+      "long": 0
+    },
+    {
+      "scene": "garden (M2 p8)",
+      "fps": 60.2,
+      "p95": 16.7,
+      "long": 0
+    },
+    {
+      "scene": "choice cards (M1 p3)",
+      "fps": 60.4,
+      "p95": 16.8,
+      "long": 0
+    },
+    {
+      "scene": "sleep cabin (M6 p7)",
+      "fps": 60.2,
+      "p95": 16.8,
+      "long": 0
+    }
+  ]
+}
