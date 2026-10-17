@@ -1,0 +1,83 @@
+{
+  "missions": {
+    "welcome-aboard": {
+      "paths": 8,
+      "pages": 14,
+      "ends": [
+        "end"
+      ],
+      "minutes": [
+        6.7,
+        7
+      ]
+    },
+    "space-garden": {
+      "paths": 8,
+      "pages": 11,
+      "ends": [
+        "end"
+      ],
+      "minutes": [
+        6.1,
+        6.7
+      ]
+    },
+    "wobbly-panel": {
+      "paths": 8,
+      "pages": 14,
+      "ends": [
+        "end"
+      ],
+      "minutes": [
+        6,
+        7.2
+      ]
+    },
+    "turns-at-the-telescope": {
+      "paths": 8,
+      "pages": 14,
+      "ends": [
+        "end"
+      ],
+      "minutes": [
+        6.1,
+        6.7
+      ]
+    },
+    "night-side-noises": {
+      "paths": 8,
+      "pages": 12,
+      "ends": [
+        "end"
+      ],
+      "minutes": [
+        6.3,
+        6.5
+      ]
+    },
+    "goodnight-earth": {
+      "paths": 8,
+      "pages": 10,
+      "ends": [
+        "end"
+      ],
+      "minutes": [
+        6.3,
+        6.5
+      ]
+    }
+  },
+  "paths": 48,
+  "casts": [
+    "NN",
+    "NG",
+    "GN",
+    "GG",
+    "SA",
+    "ST",
+    "SG"
+  ],
+  "clips": 896,
+  "engine": null,
+  "problems": []
+}

@@ -6,10 +6,13 @@
   "mood": "day",
   "sticker": "sun-catcher",
   "cover": {
-    "place": "orbit",
-    "time": "day",
-    "lights": "on",
-    "robot": "none"
+    "place": "hub",
+    "crew": "float",
+    "robot": "fix",
+    "props": [
+      "window-sun",
+      "suncatcher-wobbly"
+    ]
   },
   "parent": {
     "virtue": "Honesty and owning mistakes",
@@ -80,7 +83,7 @@
           }
         },
         {
-          "say": "Inside, by a window, there's one more little solar panel. It's called the Sun Catcher. It charges Button's batteries."
+          "say": "Inside, by a window, there's one more little solar panel. It's called the Sun Catcher."
         }
       ],
       "next": "p1b"
@@ -178,7 +181,7 @@
           "if": {
             "game": "somersault"
           },
-          "say": "{T}, can you help us spin? Tap anywhere!",
+          "say": "{T}, can you count the somersaults? Tap, tap, tap!",
           "tap": {
             "effect": "spin",
             "count": 3
@@ -188,7 +191,7 @@
           "if": {
             "game": "ball"
           },
-          "say": "{T}, can you help bounce the ball? Tap anywhere!",
+          "say": "{T}, can you count the bounces? Tap, tap, tap!",
           "tap": {
             "effect": "bounce",
             "count": 3
@@ -306,7 +309,7 @@
           "say": "Button's eyes drooped. Its tummy light flickered."
         },
         {
-          "say": "Now {a}'s tummy felt even wigglier. Button thought it was Button's fault. But it wasn't."
+          "say": "Now {a}'s tummy felt even wigglier. Button thought it had done something wrong. But it hadn't."
         },
         {
           "say": "[{a} took a big breath, and {t} held on tight.|{a} took a big, deep breath.]"
@@ -335,6 +338,9 @@
         },
         {
           "say": "Button stopped humming, and listened, very carefully."
+        },
+        {
+          "say": "\"Hmm,\" said Button. \"Let's go and take a look.\""
         }
       ],
       "next": "p5"
@@ -555,6 +561,16 @@
       "beats": [
         {
           "say": "Just then, the station sailed into Earth's shadow. Outside, it got dark."
+        },
+        {
+          "say": "Through the window, the Sun slipped behind the edge of the Earth."
+        },
+        {
+          "say": "{T}, can you wave goodbye to the Sun? Tap anywhere!",
+          "tap": {
+            "effect": "hello",
+            "count": 3
+          }
         },
         {
           "say": "\"Will our lights go out?\" asked {t}."

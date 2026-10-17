@@ -65,7 +65,8 @@
         "robot": "happy",
         "props": [
           "plants-0"
-        ]
+        ],
+        "lights": "garden-off"
       },
       "beats": [
         {
@@ -91,7 +92,10 @@
           }
         },
         {
-          "say": "\"Real astronauts have grown lettuce in space,\" said Button. \"And they ate it, too!\""
+          "say": "\"Real astronauts have grown lettuce in space,\" said Button. \"And they ate it, too!\"",
+          "art": {
+            "lights": "on"
+          }
         }
       ],
       "choice": {

@@ -129,12 +129,23 @@ function moduleInterior(pal: WallPal, opts: PlaceOpts, seed = 3): string {
         const [x, y] = wp('top', u, sDepth);
         const group = Math.floor(i / 2);
         const on = group < party.n;
-        const rr = 5 * sDepth;
+        const rr = 7.5 * sDepth;
         s += line(x, y - rr * 1.6, x, y - rr * 0.6, C.cable, 2 * sDepth);
         if (on) s += circle(x, y, rr * 2.4, party.color, 'opacity="0.25"');
         s += circle(x, y, rr, on ? party.color : shade(party.color, -0.45));
         k++;
       }
+    }
+    // a garland across the back wall
+    const n = 9;
+    s += path(`M${BACK.x0 + 16} ${BACK.y0 + 30} Q0 ${BACK.y0 + 110} ${BACK.x1 - 16} ${BACK.y0 + 30}`, 'none', `stroke="${C.cable}" stroke-width="4"`);
+    for (let i = 0; i < n; i++) {
+      const t = (i + 0.5) / n;
+      const x = BACK.x0 + 16 + t * (BACK.x1 - BACK.x0 - 32);
+      const y = BACK.y0 + 30 + 4 * t * (1 - t) * 80 + 14;
+      const on = Math.floor(i / 2) < party.n;
+      if (on) s += circle(x, y, 26, party.color, 'opacity="0.28"');
+      s += ellipse(x, y, 11, 14, on ? party.color : shade(party.color, -0.45));
     }
   }
   return s;
@@ -170,16 +181,20 @@ function hatchSvg(r: number, opts: PlaceOpts, pal: WallPal, open: boolean, glow:
 
 function gardenChamber(opts: PlaceOpts, pal: WallPal): string {
   const x0 = -230, x1 = 230, y0 = 268, y1 = 604;
-  const lit = opts.lights !== 'off' && !opts.lights.startsWith('grow:0');
+  // lights: 'garden-off' (chamber dark), 'grow:k' (switching on, k of 3), anything else lit
+  const g = /^grow:(\d)$/.exec(opts.lights);
+  const frac = opts.lights === 'garden-off' ? 0 : g ? Number(g[1]) / 3 : 1;
   let s = rect(x0 - 18, y0 - 18, x1 - x0 + 36, y1 - y0 + 36, 26, C.metal, `stroke="${C.metalDark}" stroke-width="5"`);
-  const gid = lit ? 'gch1' : 'gch0';
-  s += `<defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${lit ? '#f4b2e6' : '#6b5a86'}"/><stop offset="1" stop-color="${lit ? '#a87ee8' : '#463d63'}"/></linearGradient></defs>`;
-  s += rect(x0, y0, x1 - x0, y1 - y0, 14, `url(#${gid})`);
+  s += `<defs><linearGradient id="gch0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b5a86"/><stop offset="1" stop-color="#463d63"/></linearGradient>` +
+    `<linearGradient id="gch1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4b2e6"/><stop offset="1" stop-color="#a87ee8"/></linearGradient></defs>`;
+  s += rect(x0, y0, x1 - x0, y1 - y0, 14, 'url(#gch0)');
+  if (frac > 0) s += rect(x0, y0, x1 - x0, y1 - y0, 14, 'url(#gch1)', `opacity="${f(frac)}"`);
   // LED bar
   s += rect(x0 + 10, y0 + 6, x1 - x0 - 20, 26, 10, '#3d3f5c');
+  const litLeds = Math.round(16 * frac);
   for (let i = 0; i < 16; i++) {
     const x = x0 + 26 + i * 26.5;
-    s += circle(x, y0 + 19, 6, lit ? (i % 3 === 1 ? C.growBlue : C.growRed) : '#5a5c7a');
+    s += circle(x, y0 + 19, 6, i < litLeds ? (i % 3 === 1 ? C.growBlue : C.growRed) : '#5a5c7a');
   }
   void pal;
   return s;
@@ -212,6 +227,8 @@ function washFor(opts: PlaceOpts): PlaceLayers['wash'] {
   if (opts.lights === 'bedtime-dim') return { color: '#3a2a4a', opacity: 0.32 };
   if (opts.lights === 'bedtime' || opts.bedtime) return { color: '#4a3048', opacity: 0.2 };
   if (opts.time === 'night') return { color: '#0d1235', opacity: 0.12 };
+  if (opts.lights === 'yellow') return { color: '#ffd75e', opacity: 0.1 };
+  if (opts.lights === 'blue') return { color: '#62b6ff', opacity: 0.1 };
   return undefined;
 }
 

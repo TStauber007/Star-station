@@ -318,7 +318,7 @@
           "say": "{T}, can you help the nights go by? Tap, and watch the Moon grow!",
           "tap": {
             "effect": "moon",
-            "count": 3
+            "count": 2
           }
         },
         {
@@ -355,10 +355,7 @@
           }
         },
         {
-          "say": "A crescent. A half. A big bulgy one. And soon, a full Moon."
-        },
-        {
-          "say": "\"The Moon looks like it's growing,\" said Button. \"But it's the same Moon, all the time. We just see more of its sunny side.\""
+          "say": "\"The Moon isn't really growing,\" said Button. \"We just see more of its sunny side.\""
         }
       ],
       "next": "p7"
@@ -507,6 +504,45 @@
           }
         }
       ],
+      "next": "p9-share"
+    },
+    "p9-share": {
+      "art": {
+        "place": "cupola",
+        "time": "night",
+        "crew": "look",
+        "robot": "happy",
+        "moon": "full",
+        "props": [
+          "moon-chart"
+        ]
+      },
+      "beats": [
+        {
+          "say": "\"Let's share our Moon with Mission Control,\" said {a}."
+        },
+        {
+          "say": "Button took a picture of the full Moon. Click!",
+          "sfx": "click"
+        },
+        {
+          "say": "{T}, can you send the picture all the way down to Earth? Tap anywhere!",
+          "tap": {
+            "effect": "hello",
+            "count": 3
+          }
+        },
+        {
+          "say": "A message crackled back from Mission Control. \"What a beautiful Moon! We can see it from down here, too.\"",
+          "sfx": "radio"
+        },
+        {
+          "say": "People all over the world can look up, and see the very same Moon."
+        },
+        {
+          "say": "One Moon, for everybody to share."
+        }
+      ],
       "next": "end"
     },
     "end": {
@@ -525,7 +561,7 @@
           "say": "\"Beep,\" agreed Button, very softly."
         },
         {
-          "say": "One telescope. Lots of turns. And one big, bright, beautiful Moon, for everybody."
+          "say": "One telescope. Lots of turns. And one big, bright, beautiful Moon."
         }
       ],
       "end": true

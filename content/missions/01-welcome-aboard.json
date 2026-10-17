@@ -5,7 +5,15 @@
   "titleSay": "Mission one. Welcome Aboard!",
   "mood": "day",
   "sticker": "hello-button",
-  "cover": { "place": "orbit", "time": "day", "robot": "wave" },
+  "cover": {
+    "place": "dock",
+    "props": [
+      "hatch-open",
+      "boxes"
+    ],
+    "crew": "wave",
+    "robot": "wave"
+  },
   "parent": {
     "virtue": "Saying hello to someone new",
     "science": [
@@ -16,9 +24,26 @@
     ],
     "summary": "A shy new helper robot arrives on a supply ship. The crew says hello, shows Button around, and throws a welcome party.",
     "paths": [
-      { "moment": "How to say hello", "options": ["Wave: Button waves back so hard it somersaults.", "Sing: a hello song makes Button's tummy light glow."] },
-      { "moment": "Race to the window, or show Button the way", "options": ["Race: Button is left behind and its light goes dim. The crew notices, comes back, says sorry, and brings Button along.", "Show the way: they float down the station hand in hand."] },
-      { "moment": "Party light colour", "options": ["Sunny yellow or ocean blue. Either one, Tommy lights it up."] }
+      {
+        "moment": "How to say hello",
+        "options": [
+          "Wave: Button waves back so hard it somersaults.",
+          "Sing: a hello song makes Button's tummy light glow."
+        ]
+      },
+      {
+        "moment": "Race to the window, or show Button the way",
+        "options": [
+          "Race: Button is left behind and its light goes dim. The crew notices, comes back, says sorry, and brings Button along.",
+          "Show the way: they float down the station hand in hand."
+        ]
+      },
+      {
+        "moment": "Party light colour",
+        "options": [
+          "Sunny yellow or ocean blue. Either one, Tommy lights it up."
+        ]
+      }
     ],
     "talk": [
       "How do you think Button felt when it was new and didn't know anybody?",
@@ -26,181 +51,560 @@
       "Why does everything float on the space station?"
     ]
   },
-  "state": { "shipColor": "yellow", "raced": "no" },
+  "state": {
+    "shipColor": "yellow",
+    "raced": "no"
+  },
   "start": "p1",
   "pages": {
     "p1": {
-      "art": { "place": "orbit", "time": "day", "lights": "off", "robot": "none" },
+      "art": {
+        "place": "orbit",
+        "time": "day",
+        "lights": "off",
+        "robot": "none"
+      },
       "beats": [
-        { "say": "High above the Earth, a little space station sails around and around." },
-        { "say": "Its name is Star Station." },
-        { "say": "Star Station has a very special crew: {crew}!" },
-        { "say": "But this morning, the station is still asleep. {T}, can you wake it up? Tap, tap, tap!", "tap": { "effect": "wake", "count": 4 } },
-        { "say": "Good morning, Star Station!", "art": { "lights": "on" }, "sfx": "chime" }
+        {
+          "say": "High above the Earth, a little space station sails around and around."
+        },
+        {
+          "say": "Its name is Star Station."
+        },
+        {
+          "say": "Star Station has a very special crew: {crew}!"
+        },
+        {
+          "say": "But this morning, the station is still asleep. {T}, can you wake it up? Tap, tap, tap!",
+          "tap": {
+            "effect": "wake",
+            "count": 4
+          }
+        },
+        {
+          "say": "Good morning, Star Station!",
+          "art": {
+            "lights": "on"
+          },
+          "sfx": "chime"
+        }
       ],
       "next": "p2"
     },
     "p2": {
-      "art": { "place": "hub", "crew": "float", "robot": "none", "props": ["sock"] },
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "none",
+        "props": [
+          "sock"
+        ]
+      },
       "beats": [
-        { "say": "Inside the station, everything floats." },
-        { "say": "{a}'s hair floats up, up, up." },
-        { "say": "And look! {t}'s sock is floating away. Wheee!" },
-        { "say": "{T}, can you catch the sock? Tap it!", "do": { "targets": "sock" } },
-        { "say": "Got it! What a catch!", "art": { "props": ["sock-caught"] } },
-        { "say": "Why does everything float up here?" },
-        { "say": "Here's the secret. Our whole station is always falling around the Earth. Swooping around and around, and never landing." },
-        { "say": "And everything inside swoops right along with it. So everything floats!" },
-        { "say": "That's why there are handrails to hold on to, and Velcro to keep things from floating away." },
-        { "say": "{a} stuck the sock on a Velcro patch. Rrrip... stick!", "art": { "props": ["sock-velcro"] }, "sfx": "velcro" }
+        {
+          "say": "Inside the station, everything floats."
+        },
+        {
+          "say": "{a}'s hair floats up, up, up."
+        },
+        {
+          "say": "And look! {t}'s sock is floating away. Wheee!"
+        },
+        {
+          "say": "{T}, can you catch the sock? Tap it!",
+          "do": {
+            "targets": "sock"
+          }
+        },
+        {
+          "say": "Got it! What a catch!",
+          "art": {
+            "props": [
+              "sock-caught"
+            ]
+          }
+        },
+        {
+          "say": "Why does everything float up here?"
+        },
+        {
+          "say": "Here's the secret. Our whole station is always falling around the Earth. Swooping around and around, and never landing."
+        },
+        {
+          "say": "And everything inside swoops right along with it. So everything floats!"
+        },
+        {
+          "say": "That's why there are handrails to hold on to, and Velcro to keep things from floating away."
+        },
+        {
+          "say": "{a} stuck the sock on a Velcro patch. Rrrip... stick!",
+          "art": {
+            "props": [
+              "sock-velcro"
+            ]
+          },
+          "sfx": "velcro"
+        }
       ],
       "next": "p3"
     },
     "p3": {
-      "art": { "place": "dock", "crew": "float", "robot": "hidden", "props": ["hatch-closed"] },
+      "art": {
+        "place": "dock",
+        "crew": "float",
+        "robot": "hidden",
+        "props": [
+          "hatch-closed"
+        ]
+      },
       "beats": [
-        { "say": "Bing, bong! A little supply ship had docked with the station.", "sfx": "dingdong" },
-        { "say": "It brought food, and water, and... something else." },
-        { "say": "The round hatch swung open. Inside were boxes and boxes, floating in a jumble.", "art": { "props": ["hatch-open", "boxes"] }, "sfx": "hatch" },
-        { "say": "Then, peek! Two glowing eyes looked out from behind a box.", "art": { "robot": "peek" } },
-        { "say": "And zip! They hid again.", "art": { "robot": "hidden" } },
-        { "say": "It was a little round robot. A brand-new helper for Star Station." },
-        { "say": "But the robot was shy." }
+        {
+          "say": "Bing, bong! A little supply ship had docked with the station.",
+          "sfx": "dingdong"
+        },
+        {
+          "say": "It brought food, and water, and... something else."
+        },
+        {
+          "say": "The round hatch swung open. Inside were boxes and boxes, floating in a jumble.",
+          "art": {
+            "props": [
+              "hatch-open",
+              "boxes"
+            ]
+          },
+          "sfx": "hatch"
+        },
+        {
+          "say": "Then, peek! Two glowing eyes looked out from behind a box.",
+          "art": {
+            "robot": "peek"
+          }
+        },
+        {
+          "say": "And zip! They hid again.",
+          "art": {
+            "robot": "hidden"
+          }
+        },
+        {
+          "say": "It was a little round robot. A brand-new helper for Star Station."
+        },
+        {
+          "say": "But the robot was shy."
+        }
       ],
       "choice": {
         "say": "{A}, how should we say hello to our new friend?",
         "options": [
-          { "card": "wave", "label": "Wave", "say": "Should we wave hello?", "next": "p4-wave" },
-          { "card": "song", "label": "Sing", "say": "Or sing a hello song?", "next": "p4-song" }
+          {
+            "card": "wave",
+            "label": "Wave",
+            "say": "Should we wave hello?",
+            "next": "p4-wave"
+          },
+          {
+            "card": "song",
+            "label": "Sing",
+            "say": "Or sing a hello song?",
+            "next": "p4-song"
+          }
         ]
       }
     },
     "p4-wave": {
-      "art": { "place": "dock", "crew": "wave", "robot": "peek", "props": ["hatch-open", "boxes"] },
+      "art": {
+        "place": "dock",
+        "crew": "wave",
+        "robot": "peek",
+        "props": [
+          "hatch-open",
+          "boxes"
+        ]
+      },
       "beats": [
-        { "say": "{crew} waved a big, slow, friendly wave." },
-        { "say": "The little robot peeked out. It waved back, with both arms...", "art": { "robot": "wave" } },
-        { "say": "...so hard that it spun around in a slow, floaty somersault.", "art": { "robot": "spin" }, "sfx": "whirl" },
-        { "say": "\"Whoops-a-daisy,\" beeped the robot. \"Hello!\"", "art": { "robot": "happy" } }
+        {
+          "say": "{crew} waved a big, slow, friendly wave."
+        },
+        {
+          "say": "The little robot peeked out. It waved back, with both arms...",
+          "art": {
+            "robot": "wave"
+          }
+        },
+        {
+          "say": "...so hard that it spun around in a slow, floaty somersault.",
+          "art": {
+            "robot": "spin"
+          },
+          "sfx": "whirl"
+        },
+        {
+          "say": "\"Whoops-a-daisy,\" beeped the robot. \"Hello!\"",
+          "art": {
+            "robot": "happy"
+          }
+        }
       ],
       "next": "p5"
     },
     "p4-song": {
-      "art": { "place": "dock", "crew": "sing", "robot": "peek", "props": ["hatch-open", "boxes", "notes"] },
+      "art": {
+        "place": "dock",
+        "crew": "sing",
+        "robot": "peek",
+        "props": [
+          "hatch-open",
+          "boxes",
+          "notes"
+        ]
+      },
       "beats": [
-        { "say": "{crew} sang a hello song, soft and sweet." },
-        { "say": "Hello, hello, we're glad you came! Hello, new friend. What is your name?", "sfx": "song" },
-        { "say": "The little robot floated out, slow and careful.", "art": { "robot": "shy" } },
-        { "say": "A round button on its tummy began to glow, warm and orange.", "art": { "robot": "happy" } }
+        {
+          "say": "{crew} sang a hello song, soft and sweet."
+        },
+        {
+          "say": "Hello, hello, we're glad you came! Hello, new friend. What is your name?",
+          "sfx": "song"
+        },
+        {
+          "say": "The little robot floated out, slow and careful.",
+          "art": {
+            "robot": "shy"
+          }
+        },
+        {
+          "say": "A round button on its tummy began to glow, warm and orange.",
+          "art": {
+            "robot": "happy"
+          }
+        }
       ],
       "next": "p5"
     },
     "p5": {
-      "art": { "place": "dock", "crew": "float", "robot": "happy", "props": ["hatch-open", "boxes"] },
+      "art": {
+        "place": "dock",
+        "crew": "float",
+        "robot": "happy",
+        "props": [
+          "hatch-open",
+          "boxes"
+        ]
+      },
       "beats": [
-        { "say": "\"My name is Button,\" said the robot. \"Because of this!\"" },
-        { "say": "Button pressed the round button on its tummy. Boop!", "sfx": "boop" },
-        { "say": "{T}, can you help Button boop? Tap anywhere!", "tap": { "effect": "boop", "count": 4 } },
-        { "say": "Button giggled a beepy giggle. Beep, boo, hee hee!", "art": { "robot": "giggle" } },
-        { "say": "\"I'm new here,\" said Button. \"Everything is so big. And so... floaty.\"", "art": { "robot": "shy" } }
+        {
+          "say": "\"My name is Button,\" said the robot. \"Because of this!\""
+        },
+        {
+          "say": "Button pressed the round button on its tummy. Boop!",
+          "sfx": "boop"
+        },
+        {
+          "say": "{T}, can you help Button boop? Tap anywhere!",
+          "tap": {
+            "effect": "boop",
+            "count": 4
+          }
+        },
+        {
+          "say": "Button giggled a beepy giggle. Beep, boo, hee hee!",
+          "art": {
+            "robot": "giggle"
+          }
+        },
+        {
+          "say": "\"I'm new here,\" said Button. \"Everything is so big. And so... floaty.\"",
+          "art": {
+            "robot": "shy"
+          }
+        }
       ],
       "next": "p6"
     },
     "p6": {
-      "art": { "place": "hub", "crew": "float", "robot": "shy", "props": ["cupola-glow"] },
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "shy",
+        "props": [
+          "cupola-glow"
+        ]
+      },
       "beats": [
-        { "say": "Just then, the big window at the end of the station began to glow, blue and bright." },
-        { "say": "The Earth was coming into view! It's the best view on the whole station." },
-        { "say": "{crew} wanted to see it right away." }
+        {
+          "say": "Just then, the big window at the end of the station began to glow, blue and bright."
+        },
+        {
+          "say": "The Earth was coming into view! It's the best view on the whole station."
+        },
+        {
+          "say": "{crew} wanted to see it right away."
+        }
       ],
       "choice": {
         "say": "{A}, what should we do?",
         "options": [
-          { "card": "zoom", "label": "Zoom!", "say": "Zoom to the window, right now?", "next": "p7-zoom", "set": { "raced": "yes" } },
-          { "card": "show-way", "label": "Show the way", "say": "Or show Button the way?", "next": "p7-show" }
+          {
+            "card": "zoom",
+            "label": "Zoom!",
+            "say": "Zoom to the window, right now?",
+            "next": "p7-zoom",
+            "set": {
+              "raced": "yes"
+            }
+          },
+          {
+            "card": "show-way",
+            "label": "Show the way",
+            "say": "Or show Button the way?",
+            "next": "p7-show"
+          }
         ]
       }
     },
     "p7-zoom": {
-      "art": { "place": "hub", "crew": "zoom", "robot": "sad", "props": ["cupola-glow"] },
+      "art": {
+        "place": "hub",
+        "crew": "zoom",
+        "robot": "sad",
+        "props": [
+          "cupola-glow"
+        ]
+      },
       "beats": [
-        { "say": "Zoom! Whoosh! {crew} raced off toward the window.", "sfx": "whoosh" },
-        { "say": "But wait. Where was Button?" },
-        { "say": "Button was still back by the boxes, all alone. Its tummy light had gone dim." },
-        { "say": "Button didn't know the way. Everything was so new." },
-        { "say": "{crew} looked back, and saw Button there, all by itself.", "art": { "crew": "worry" } },
-        { "say": "[So they|So {a}] zoomed all the way back.", "art": { "crew": "float" }, "sfx": "whoosh" },
-        { "say": "\"Sorry, Button! [We|I] didn't mean to leave you behind. Come with [us|me]!\"" },
-        { "say": "[They held out their hands.|{a} held out a hand.] And Button's tummy light glowed bright again.", "art": { "crew": "hold", "robot": "happy" } }
+        {
+          "say": "Zoom! Whoosh! {crew} raced off toward the window.",
+          "sfx": "whoosh"
+        },
+        {
+          "say": "But wait. Where was Button?"
+        },
+        {
+          "say": "Button was still back by the boxes, all alone. Its tummy light had gone dim."
+        },
+        {
+          "say": "Button didn't know the way. Everything was so new."
+        },
+        {
+          "say": "{crew} looked back, and saw Button there, all by itself.",
+          "art": {
+            "crew": "worry"
+          }
+        },
+        {
+          "say": "[So they|So {a}] zoomed all the way back.",
+          "art": {
+            "crew": "float"
+          },
+          "sfx": "whoosh"
+        },
+        {
+          "say": "\"Sorry, Button! [We|I] didn't mean to leave you behind. Come with [us|me]!\""
+        },
+        {
+          "say": "[They held out their hands.|{a} held out a hand.] And Button's tummy light glowed bright again.",
+          "art": {
+            "crew": "hold",
+            "robot": "happy"
+          }
+        }
       ],
       "next": "p8"
     },
     "p7-show": {
-      "art": { "place": "hub", "crew": "hold", "robot": "happy", "props": ["cupola-glow"] },
+      "art": {
+        "place": "hub",
+        "crew": "hold",
+        "robot": "happy",
+        "props": [
+          "cupola-glow"
+        ]
+      },
       "beats": [
-        { "say": "\"Come with [us|me], Button!\" said {a}. \"[We'll|I'll] show you the way.\"" },
-        { "say": "[{a} took one of Button's hands, and {t} took the other.|{a} took Button's little hand.]" },
-        { "say": "Together, they floated down the station. Past the handrails. Past the Velcro patches." },
-        { "say": "And Button's tummy light glowed brighter, and brighter." }
+        {
+          "say": "\"Come with [us|me], Button!\" said {a}. \"[We'll|I'll] show you the way.\""
+        },
+        {
+          "say": "[{a} took one of Button's hands, and {t} took the other.|{a} took Button's little hand.]"
+        },
+        {
+          "say": "Together, they floated down the station. Past the handrails. Past the Velcro patches."
+        },
+        {
+          "say": "And Button's tummy light glowed brighter, and brighter."
+        }
       ],
       "next": "p8"
     },
     "p8": {
-      "art": { "place": "cupola", "time": "day", "crew": "look", "robot": "look" },
+      "art": {
+        "place": "cupola",
+        "time": "day",
+        "crew": "look",
+        "robot": "look"
+      },
       "beats": [
-        { "say": "And there it was. The Cupola! A round room made of windows." },
-        { "say": "Seven windows, looking out at the Earth, and the stars." },
-        { "say": "\"Ooooooh,\" said Button." },
-        { "say": "The Earth was so big, and so blue." },
-        { "say": "Most of the Earth is covered with water. That's why it looks so blue!" },
-        { "say": "And those white swirls? Those are clouds." },
-        { "say": "Our station zooms around the Earth super, super fast. There's always something new to see." },
-        { "say": "{T}, can you wave hello to the Earth? Tap anywhere!", "tap": { "effect": "hello", "count": 3 } },
-        { "say": "Hello, Earth!" }
+        {
+          "say": "And there it was. The Cupola! A round room made of windows."
+        },
+        {
+          "say": "Seven windows, looking out at the Earth, and the stars."
+        },
+        {
+          "say": "\"Ooooooh,\" said Button."
+        },
+        {
+          "say": "The Earth was so big, and so blue."
+        },
+        {
+          "say": "Most of the Earth is covered with water. That's why it looks so blue!"
+        },
+        {
+          "say": "And those white swirls? Those are clouds."
+        },
+        {
+          "say": "Our station zooms around the Earth super, super fast. There's always something new to see."
+        },
+        {
+          "say": "{T}, can you wave hello to the Earth? Tap anywhere!",
+          "tap": {
+            "effect": "hello",
+            "count": 3
+          }
+        },
+        {
+          "say": "Hello, Earth!"
+        }
       ],
       "next": "p9"
     },
     "p9": {
-      "art": { "place": "hub", "crew": "cheer", "robot": "happy", "lights": "off" },
+      "art": {
+        "place": "hub",
+        "crew": "cheer",
+        "robot": "happy",
+        "lights": "off"
+      },
       "beats": [
-        { "say": "\"Let's have a welcome party for Button!\" said {a}." },
-        { "say": "Star Station's party lights can glow in any color you like." }
+        {
+          "say": "\"Let's have a welcome party for Button!\" said {a}."
+        },
+        {
+          "say": "Star Station's party lights can glow in any color you like."
+        }
       ],
       "choice": {
         "say": "{A}, what color should we make the lights for Button's party?",
         "options": [
-          { "card": "color-yellow", "label": "Yellow", "say": "Sunny yellow?", "next": "p10", "set": { "shipColor": "yellow" } },
-          { "card": "color-blue", "label": "Blue", "say": "Or ocean blue?", "next": "p10", "set": { "shipColor": "blue" } }
+          {
+            "card": "color-yellow",
+            "label": "Yellow",
+            "say": "Sunny yellow?",
+            "next": "p10",
+            "set": {
+              "shipColor": "yellow"
+            }
+          },
+          {
+            "card": "color-blue",
+            "label": "Blue",
+            "say": "Or ocean blue?",
+            "next": "p10",
+            "set": {
+              "shipColor": "blue"
+            }
+          }
         ]
       }
     },
     "p10": {
-      "art": { "place": "hub", "crew": "float", "robot": "happy", "lights": "off" },
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "happy",
+        "lights": "off"
+      },
       "beats": [
-        { "say": "What a great color! Now, {T}, can you light up the station? Tap, tap, tap!", "tap": { "effect": "partylights", "count": 5 } },
-        { "if": { "shipColor": "yellow" }, "say": "The whole station glowed sunny yellow, like the inside of a lemon drop.", "art": { "lights": "$shipColor" } },
-        { "if": { "shipColor": "blue" }, "say": "The whole station glowed ocean blue, like the inside of a wave.", "art": { "lights": "$shipColor" } }
+        {
+          "say": "What a great color! Now, {T}, can you light up the station? Tap, tap, tap!",
+          "tap": {
+            "effect": "partylights",
+            "count": 5
+          }
+        },
+        {
+          "if": {
+            "shipColor": "yellow"
+          },
+          "say": "The whole station glowed sunny yellow, like the inside of a lemon drop.",
+          "art": {
+            "lights": "$shipColor"
+          }
+        },
+        {
+          "if": {
+            "shipColor": "blue"
+          },
+          "say": "The whole station glowed ocean blue, like the inside of a wave.",
+          "art": {
+            "lights": "$shipColor"
+          }
+        }
       ],
       "next": "p11"
     },
     "p11": {
-      "art": { "place": "hub", "crew": "float", "robot": "dance", "lights": "$shipColor", "props": ["tortillas"] },
+      "art": {
+        "place": "hub",
+        "crew": "float",
+        "robot": "dance",
+        "lights": "$shipColor",
+        "props": [
+          "tortillas"
+        ]
+      },
       "beats": [
-        { "say": "Then came the party snacks." },
-        { "say": "In space, we usually eat tortillas instead of bread. Bread makes crumbs, and crumbs float everywhere!" },
-        { "say": "A tortilla drifted by, like a little flying saucer." },
-        { "say": "{t} took a big bite. Munch, munch, munch." },
-        { "say": "Button didn't eat anything. Robots don't. But Button did a happy little dance, spinning slowly in the air.", "sfx": "whirl" }
+        {
+          "say": "Then came the party snacks."
+        },
+        {
+          "say": "In space, we usually eat tortillas instead of bread. Bread makes crumbs, and crumbs float everywhere!"
+        },
+        {
+          "say": "A tortilla drifted by, like a little flying saucer."
+        },
+        {
+          "say": "{t} took a big bite. Munch, munch, munch."
+        },
+        {
+          "say": "Button didn't eat anything. Robots don't. But Button did a happy little dance, spinning slowly in the air.",
+          "sfx": "whirl"
+        }
       ],
       "next": "end"
     },
     "end": {
-      "art": { "place": "cupola", "time": "day", "crew": "hold", "robot": "happy", "lights": "$shipColor" },
+      "art": {
+        "place": "cupola",
+        "time": "day",
+        "crew": "hold",
+        "robot": "happy",
+        "lights": "$shipColor"
+      },
       "beats": [
-        { "say": "\"Thank you for saying hello,\" said Button. \"I don't feel shy anymore.\"" },
-        { "say": "\"Welcome aboard, Button,\" said {crew}." },
-        { "say": "Below them, the Earth turned slowly. Blue, and white, and beautiful." },
-        { "say": "And Star Station sailed on, around and around, with its whole crew together." }
+        {
+          "say": "\"Thank you for saying hello,\" said Button. \"I don't feel shy anymore.\""
+        },
+        {
+          "say": "\"Welcome aboard, Button,\" said {crew}."
+        },
+        {
+          "say": "Below them, the Earth turned slowly. Blue, and white, and beautiful."
+        },
+        {
+          "say": "And Star Station sailed on, around and around, with its whole crew together."
+        }
       ],
       "end": true
     }

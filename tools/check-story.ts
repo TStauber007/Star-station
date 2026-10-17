@@ -135,7 +135,7 @@ for (const m of missions) {
     }
     if (!stretchHasTap) stretchProblems.push('after the last choice');
     // read-aloud ≈ 140 words/min at our speed, + pauses between lines, taps, choices, page turns
-    const secs = (words / 140) * 60 / (missionSpeed(m) / 0.82) + lines * 0.8 + taps * 7 + dos * 6 + chosen * 8 + pages * 2.5;
+    const secs = (words / 140) * 60 / (missionSpeed(m) / 0.82) + lines * (m.mood === "bedtime" ? 1.15 : 0.8) + taps * 7 + dos * 6 + chosen * 8 + pages * 2.5;
     return { words, taps, dos, chosen, pages, secs, stretchProblems, path: pa };
   });
   for (const s of stats) for (const sp of s.stretchProblems)

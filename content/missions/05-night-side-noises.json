@@ -6,9 +6,13 @@
   "mood": "day",
   "sticker": "flashlight",
   "cover": {
-    "place": "orbit",
-    "time": "sunset",
-    "lights": "on"
+    "place": "hub",
+    "time": "night",
+    "crew": "hold",
+    "robot": "scared",
+    "props": [
+      "flashlight-on"
+    ]
   },
   "parent": {
     "virtue": "Courage, and helping someone who is scared",
@@ -121,6 +125,9 @@
         },
         {
           "say": "Button zipped behind {crew}, and peeked out, all wobbly."
+        },
+        {
+          "say": "Its antenna wobbled. Its tummy light flickered."
         },
         {
           "say": "Button was scared."
@@ -436,6 +443,13 @@
         },
         {
           "say": "Button took a big breath. Well, robots don't really breathe. But it was a big breath, anyway."
+        },
+        {
+          "say": "{T}, can you give Button a brave high five? Tap anywhere!",
+          "tap": {
+            "effect": "boop",
+            "count": 3
+          }
         }
       ],
       "next": "p8"
@@ -483,6 +497,9 @@
             "effect": "bubbles",
             "count": 3
           }
+        },
+        {
+          "say": "\"Nothing to be scared of,\" said Button. \"Just a fan, a spoon, and a water machine.\""
         }
       ],
       "next": "p9"
@@ -523,6 +540,9 @@
         {
           "say": "Sunrise!",
           "sfx": "chime"
+        },
+        {
+          "say": "Golden light filled the Cupola. And Button's tummy light glowed its very happiest orange."
         }
       ],
       "next": "end"

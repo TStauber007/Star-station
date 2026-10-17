@@ -31,7 +31,7 @@ function kids(ctx: CardCtx, pose: string, opts: { x?: number; y?: number; gap?: 
 
 const tKid = (ctx: CardCtx) => (ctx.crew === 'solo' ? ctx.soloWho : 'T');
 const bot = (mood: string, x: number, y: number, s = 1) => put(robotSvg(mood), x, y, 130 * s, 150 * s);
-const sparkles = (pts: [number, number, number][], col = C.white) => pts.map(([x, y, r]) => path(sparklePath(x, y, r), col, 'opacity="0.9"')).join('');
+const sparkles = (pts: [number, number, number][], col: string = C.white) => pts.map(([x, y, r]) => path(sparklePath(x, y, r), col, 'opacity="0.9"')).join('');
 const heart = (x: number, y: number, s: number, col = C.rose) =>
   path(`M${x} ${y + 10 * s} C${x - 26 * s} ${y - 8 * s} ${x - 12 * s} ${y - 28 * s} ${x} ${y - 14 * s} C${x + 12 * s} ${y - 28 * s} ${x + 26 * s} ${y - 8 * s} ${x} ${y + 10 * s}Z`, col);
 

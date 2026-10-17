@@ -147,8 +147,9 @@ function plantShape(kind: PlantKind, stage: number, x: number, base: number): st
     for (let i = 0; i < n; i++) {
       const a = -Math.PI / 2 + (i - (n - 1) / 2) * 0.32;
       const lx = x + Math.cos(a) * L * 0.55, ly = base + Math.sin(a) * L * 0.55;
-      const col = i % 3 === 0 ? C.leafRed : i % 2 ? C.leaf0 : C.leaf1;
-      s += ellipse(lx, ly, L * 0.28, L * 0.5, col, `transform="rotate(${f((a * 180) / Math.PI + 90)} ${f(lx)} ${f(ly)})"`);
+      const col = i % 3 === 0 ? C.leaf2 : i % 2 ? C.leaf0 : C.leaf1;
+      const rot = `transform="rotate(${f((a * 180) / Math.PI + 90)} ${f(lx)} ${f(ly)})"`;
+      s += ellipse(lx, ly, L * 0.28, L * 0.5, col, rot) + ellipse(lx, ly - L * 0.38, L * 0.2, L * 0.08, '#c4d97a', `opacity="0.7" ${rot}`);
     }
     return s + ellipse(x, base - 6, L * 0.35, 12, C.leaf2);
   }
@@ -265,7 +266,7 @@ export function propSpec(name: string, ctx: PropCtx): PropSpec | null {
     case 'seed-packet-zinnia': return { svg: seedPacketSvg('zinnia'), fx: 0.34, y: 300, w: 120, h: 150, anim: 'drift', z: 30 };
     case 'harvest-lettuce': return { svg: harvestLettuceSvg(), fx: 0.05, y: 300, w: 180, h: 150, anim: 'drift', z: 30 };
     case 'harvest-zinnia': return { svg: flowerSvg(), fx: 0.62, y: 330, w: 90, h: 90, z: 40, rot: 20 };
-    case 'telescope': return { svg: telescopeSvg(), fx: 0.62, y: 620, w: 280, h: 220, z: 9, targets: [{ dx: 92, dy: -62, r: 80, taps: 3 }] };
+    case 'telescope': return { svg: telescopeSvg(), fx: 0.62, y: 600, w: 280, h: 220, z: 9, targets: [{ dx: 92, dy: -62, r: 80, taps: 3 }] };
     case 'moon-chart': return {
       svg: moonChartSvg(ctx.moonFill), fx: -0.66, y: 270, w: 250, h: 304, z: 5,
       targets: [0, 1, 2, 3].map((i) => ({ dx: (75 + (i % 2) * 130 - 140) * (250 / 280), dy: (100 + Math.floor(i / 2) * 140 - 170) * (304 / 340), r: 60 })),

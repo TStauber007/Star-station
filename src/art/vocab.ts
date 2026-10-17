@@ -4,7 +4,7 @@ import { ROBOT_MOODS } from './robot.ts';
 import { PLACES, TIMES } from './places.ts';
 import { CARDS } from './cards.ts';
 
-export const LIGHTS = ['on', 'off', 'yellow', 'blue', 'bedtime', 'bedtime-dim'] as const;
+export const LIGHTS = ['on', 'off', 'yellow', 'blue', 'bedtime', 'bedtime-dim', 'garden-off'] as const;
 export const MOONS = ['none', 'crescent', 'half', 'gibbous', 'full'] as const;
 
 export const PROPS = [

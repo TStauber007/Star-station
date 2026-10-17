@@ -60,7 +60,7 @@ const SLOTS: Record<string, { A: [number, number]; T: [number, number]; R: [numb
   hub: { A: [-0.44, 520], T: [0.02, 600], R: [0.5, 470] },
   dock: { A: [-0.5, 540], T: [-0.12, 610], R: [0.42, 520] },
   garden: { A: [-0.56, 560], T: [-0.24, 640], R: [0.6, 560] },
-  cupola: { A: [-0.48, 650], T: [-0.08, 720], R: [0.42, 640] },
+  cupola: { A: [-0.48, 650], T: [-0.08, 720], R: [0.3, 640] },
   sleep: { A: [-0.48, 540], T: [-0.08, 570], R: [0.5, 640] },
   tunnel: { A: [-0.58, 560], T: [0.02, 610], R: [-0.28, 500] },
   orbit: { A: [-0.3, 600], T: [0, 620], R: [0.3, 600] },
@@ -134,7 +134,13 @@ export function composeScene(rawArt: SceneArt, ctx: ComposeCtx): Scene {
 
   // ---- the crew
   const crewPose = art.crew ?? (place === 'orbit' ? 'none' : 'float');
-  const slots = SLOTS[place] ?? SLOTS.hub;
+  let slots = SLOTS[place] ?? SLOTS.hub;
+  // make room by the Sun Catcher on the left wall
+  const byPanel = [...props].some((p) => p === 'window-sun' || p.startsWith('suncatcher') || p === 'curtain');
+  if (byPanel && (place === 'hub')) slots = { A: [0.12, 520], T: [0.44, 610], R: [0.66, 470] };
+  // the telescope: whoever is looking stands at the eyepiece
+  const scopeX = 0.62;
+  const eyepiece = (H2: number) => scopeX * H2 - 150;
   const who: Who[] = ctx.crew === 'two' ? ['A', 'T'] : [ctx.soloWho];
   const robotMood = art.robot ?? (place === 'orbit' ? 'none' : 'happy');
 
@@ -161,8 +167,8 @@ export function composeScene(rawArt: SceneArt, ctx: ComposeCtx): Scene {
       if (pose === 'tumble') anim = 'spin-slow';
       if (pose === 'telescope') {
         const atScope = solo || w === 'T';
-        if (atScope) { fx = 0.34; y = 600; pose = 'telescope'; flip = false; }
-        else { pose = 'look'; }
+        if (atScope) { fx = eyepiece(H) / H; y = 730; pose = 'telescope'; flip = false; }
+        else { pose = 'look'; fx = solo ? fx : -0.5; }
       }
       if (pose === 'squish') { fx = w === 'A' ? 0.3 : 0.48; y = w === 'A' ? 560 : 620; rot = w === 'A' ? 12 : -10; anim = 'wobble'; }
       if (isBed) {
@@ -192,11 +198,12 @@ export function composeScene(rawArt: SceneArt, ctx: ComposeCtx): Scene {
     if (robotMood === 'spin' || robotMood === 'dance') anim = 'spin-slow';
     if (robotMood === 'giggle') anim = 'giggle';
     if (robotMood === 'scared') anim = 'shiver';
-    if (robotMood === 'telescope') { x = X(0.36); y = 560; }
-    if (robotMood === 'wait') { x = X(0.05); y = 500; }
+    if (robotMood === 'telescope') { x = eyepiece(H) + 10; y = 670; }
+    else if (crewPose === 'telescope') { x = X(-0.06); y = 560; }
+    if (robotMood === 'wait') { x = X(-0.06); y = 520; }
     if (robotMood === 'squish') { x = X(0.62); y = 540; anim = 'wobble'; }
-    if (robotMood === 'charge') { x = X(-0.2); y = 520; }
-    if (robotMood === 'fix') { x = X(-0.2); y = 470; }
+    if (robotMood === 'charge') { x = X(-0.3); y = 520; }
+    if (robotMood === 'fix') { x = X(-0.3); y = 470; }
     if (place === 'sleep') { anim = 'breathe'; }
     if (place === 'tunnel') { x = X(-0.28); }
     actors.push({ id: 'robot', svg: robotSvg(robotMood), x, y, w: BOT_BOX.w * scale, h: BOT_BOX.h * scale, z, anim });
