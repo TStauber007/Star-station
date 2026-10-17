@@ -61,3 +61,12 @@ Child-facing buttons are at least 88 px (most are 104–150 px). Hands-on target
 
 ## D-020 Word timings from the model itself
 The Kokoro ONNX export only outputs audio, so the build adds its internal per-phoneme duration tensor as a second output (a graph edit at build time). Word start and end times then come from the model's own timing, using the same method as Kokoro's official pipeline.
+
+## D-021 A private test copy on claude.ai
+After the build was finished, the owner asked for a copy they could open on claude.ai, so this overrides "don't deploy" for that one place only. `npm run build:claude` makes it in `dist-claude/`. That host allows no service worker and caps how many files a page has, so this copy differs from the real build in four ways:
+- It has no service worker, so it can't be installed to work offline.
+- The 896 narration clips are joined into 100 packs (grouped by mission and crew setup) and read back by byte range.
+- The fonts are inlined.
+- The app's own security policy is left out, because the host applies its own.
+
+The normal build in `dist/` doesn't change: the pack code is left out of it, and its privacy check still passes. On claude.ai the page runs inside claude.ai's own frame, so the "zero outside requests" result holds for the app itself, not for the claude.ai page around it. For bedtime use, install from Option A or B in `docs/INSTALL.md`.

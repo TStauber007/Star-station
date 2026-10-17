@@ -67,11 +67,11 @@ class AudioEngine {
   pause() { if (this.ctx && this.ctx.state === 'running') void this.ctx.suspend(); }
   resume() { if (this.ctx && this.ctx.state !== 'running') void this.ctx.resume(); }
 
-  load(url: string): Promise<AudioBuffer> {
+  /** Decode a sound once and keep it. `bytes` can supply the file another way than a plain fetch. */
+  load(url: string, bytes: () => Promise<ArrayBuffer> = () => fetchBytes(url)): Promise<AudioBuffer> {
     let p = this.cache.get(url);
     if (!p) {
-      p = fetch(url)
-        .then((r) => { if (!r.ok) throw new Error(`audio ${r.status}`); return r.arrayBuffer(); })
+      p = bytes()
         .then((buf) => new Promise<AudioBuffer>((res, rej) => this.ctx!.decodeAudioData(buf, res, rej)));
       p.catch(() => this.cache.delete(url));
       this.cache.set(url, p);
@@ -98,6 +98,10 @@ class AudioEngine {
       position: () => ctx.currentTime - startAt,
     };
   }
+}
+
+export function fetchBytes(url: string): Promise<ArrayBuffer> {
+  return fetch(url).then((r) => { if (!r.ok) throw new Error(`audio ${r.status}`); return r.arrayBuffer(); });
 }
 
 export const audio = new AudioEngine();

@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run check:story && tsc --noEmit && vite build",
+    "build:claude": "npm run check:story && tsc --noEmit && vite build --mode claude --outDir dist-claude && node tools/pack-claude.ts",
     "preview": "vite preview --host --port 4173",
     "serve:lan": "vite preview --host 0.0.0.0 --port 4173",
     "check:story": "node tools/check-story.ts",

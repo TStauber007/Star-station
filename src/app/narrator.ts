@@ -1,6 +1,7 @@
 // Plays pre-recorded narration lines and keeps the caption in step.
 import { audio } from '../audio/engine.ts';
 import { clock } from './clock.ts';
+import { packedClip } from './packs.ts';
 import { NARRATION } from './content.ts';
 import type { Caption } from '../ui/caption.ts';
 import type { CastKey } from '../story/template.ts';
@@ -22,6 +23,12 @@ export function clipFor(key: string, cast: CastKey): string | null {
 
 export function clipUrl(id: string) { return `${BASE}narration/${id}.mp3`; }
 
+/** Fetch and decode one clip. The claude.ai test build reads clips out of packs instead. */
+function loadClip(id: string): Promise<AudioBuffer> {
+  if (import.meta.env.MODE === 'claude') return audio.load(`pack:${id}`, () => packedClip(id));
+  return audio.load(clipUrl(id));
+}
+
 export class Narrator {
   cast: CastKey = 'NN';
   private playing: ReturnType<typeof audio.play> | null = null;
@@ -37,7 +44,7 @@ export class Narrator {
     if (flags.fast || !audio.ready) return;
     for (const k of keys) {
       const id = clipFor(k, this.cast);
-      if (id) void audio.load(clipUrl(id)).catch(() => {});
+      if (id) void loadClip(id).catch(() => {});
     }
   }
 
@@ -55,7 +62,7 @@ export class Narrator {
       return;
     }
     let buffer: AudioBuffer;
-    try { buffer = await audio.load(clipUrl(id!)); }
+    try { buffer = await loadClip(id!); }
     catch { await clock.wait(Math.max(800, words.length * 380)); return; }
     while (my === this.token) {
       await clock.whenRunning();

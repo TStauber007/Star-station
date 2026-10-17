@@ -11,7 +11,8 @@ if (q) void runQa(root, q);
 else new App(root).start();
 
 // Offline: the service worker keeps every file on the tablet.
-if (import.meta.env.PROD && 'serviceWorker' in navigator && !q) {
+// (The claude.ai test build has no service worker: that host doesn't allow one.)
+if (import.meta.env.PROD && import.meta.env.MODE !== 'claude' && 'serviceWorker' in navigator && !q) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').catch(() => { /* still works online */ });
   });

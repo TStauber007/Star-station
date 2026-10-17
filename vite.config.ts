@@ -62,14 +62,17 @@ function serviceWorker(): Plugin {
   };
 }
 
-export default defineConfig({
+// `--mode claude` is the claude.ai test build (npm run build:claude). That
+// host has its own security policy and allows no service worker, so both
+// plugins are left out, and the fonts are inlined into the stylesheet.
+export default defineConfig(({ mode }) => ({
   base: './',
-  plugins: [csp(), serviceWorker()],
+  plugins: mode === 'claude' ? [] : [csp(), serviceWorker()],
   build: {
     target: 'es2020',
-    assetsInlineLimit: 0,
+    assetsInlineLimit: mode === 'claude' ? 1_000_000 : 0,
     chunkSizeWarningLimit: 900,
   },
   server: { host: true },
   preview: { host: true },
-});
+}));

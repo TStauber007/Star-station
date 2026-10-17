@@ -47,6 +47,7 @@ No accounts, analytics, ads, chat, outbound links, AI at runtime, or network cal
 npm install          # tools (Vite, TypeScript, Playwright) and the Andika font
 npm run dev          # local development server
 npm run build        # story check + type check + production build in dist/
+npm run build:claude # the claude.ai test copy in dist-claude/ (no offline install; DECISIONS D-021)
 npm run verify       # every-path walk, build, privacy check, screenshots
 npm run narration    # re-record changed lines (needs the voice tools; see tools/tts/)
 ```

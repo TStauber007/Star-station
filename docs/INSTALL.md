@@ -64,6 +64,12 @@ Only devices signed in to your Tailscale account can reach that address. It is n
 
 ---
 
+## Just trying it out: a test copy on claude.ai
+
+There is a private test copy on claude.ai, open only to the owner's signed-in account. Use it to try the stories in a browser before setting up Option A or B. It plays the same missions with the same narration, but it can't be installed to work offline, and it runs inside claude.ai's page. To refresh it after a change, run `npm run build:claude` and republish the `dist-claude/` folder, keeping the same address (see DECISIONS D-021).
+
+---
+
 ## Install on the tablet
 
 Open the address once **while online** and wait about 30 seconds on the home screen, so it can save every file (about 21 MB). Then:
