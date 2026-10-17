@@ -52,6 +52,8 @@ A warm storyteller who tells the story in the third person ("Abigail and Tommy f
 - **No stated morals.** Nobody says "and that's why we always…". Characters show kindness, honesty, patience, courage and sharing, and the story shows how things turn out.
 - A less kind or less careful choice leads to a gentle, natural consequence (a friend's light goes dim; a little root droops), then the characters make it right, and the paths join again. There is no failure screen.
 - Every science line is true. Simplify, never mislead. Every fact has a source in `docs/SCIENCE_SOURCES.md`.
+- Inside the station nothing floats "up" or "down", falls, or droops, and roots don't grow "down". Things float *out*, *off*, *away* or *along*. (Mission 6 teaches "there's no up or down", so the other stories mustn't contradict it.)
+- The Earth is always there below the station; what changes is day and night. Don't write that the Earth "comes into view".
 - No real brands, characters or franchises. Avoid lines that echo famous books or films.
 - Calm pacing: no countdowns, no "hurry!", no loud surprises.
 - Each "stretch" between two choices includes at least one Tommy "tap anything" moment.

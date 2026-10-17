@@ -117,6 +117,7 @@ export async function showEnding(host: HTMLElement, m: Mission, sticker: string,
   const el = h('div', { class: `ending${bedtime ? ' bedtime' : ''}` },
     h('div', { class: 'end-title' }, 'The End'), stickerEl, h('div', { class: 'end-sticker-name' }, STICKER_NAMES[sticker] ?? ''), buttons, caption.el);
   host.append(el);
+  host.classList.add('ended'); // the story's own buttons step aside
   requestAnimationFrame(() => el.classList.add('open'));
   music.set(bedtime ? 'bedtime' : 'home');
   await clock.wait(600, signal);

@@ -79,7 +79,7 @@ export function save(next: Settings) {
 }
 
 export function update(fn: (s: Settings) => void) {
-  const s = structuredClone(load());
+  const s = JSON.parse(JSON.stringify(load())) as Settings;
   fn(s);
   save(s);
 }

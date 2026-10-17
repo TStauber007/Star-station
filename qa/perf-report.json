@@ -3,9 +3,9 @@
   "results": [
     {
       "scene": "home",
-      "fps": 57.8,
+      "fps": 60.2,
       "p95": 16.8,
-      "long": 2
+      "long": 0
     },
     {
       "scene": "orbit (M1 p1)",
@@ -21,8 +21,8 @@
     },
     {
       "scene": "cupola night (M4 p9)",
-      "fps": 60,
-      "p95": 16.7,
+      "fps": 60.2,
+      "p95": 16.8,
       "long": 0
     },
     {
@@ -33,14 +33,14 @@
     },
     {
       "scene": "choice cards (M1 p3)",
-      "fps": 60.4,
-      "p95": 16.8,
+      "fps": 60.2,
+      "p95": 16.7,
       "long": 0
     },
     {
       "scene": "sleep cabin (M6 p7)",
       "fps": 60.2,
-      "p95": 16.8,
+      "p95": 16.7,
       "long": 0
     }
   ]

@@ -51,15 +51,15 @@ Status keys: `[ ]` open · `[~]` in progress · `[x]` done
 - [x] docs/INSTALL.md (private hosting + home-PC options)
 
 ## Verification (results in docs/QA.md)
-- [~] Every-path walker: all paths end, all cues have audio, no dead ends
-- [~] Playwright screenshots: 1024×768, 768×1024, 1280×800 (10" Android) for every scene — reviewed and fixed
+- [x] Every-path walker: all paths end, all cues have audio, no dead ends (plus 144/144 engine play-throughs)
+- [x] Playwright screenshots: 1024×768, 768×1024, 1280×800 and 800×1280 (10" Android) for every scene — reviewed and fixed
 - [x] Read-aloud check with logged cuts
-- [~] Independent science check by subagent, flags fixed
+- [x] Independent science check by subagent, flags fixed
 - [x] Privacy check: zero network requests in an offline context
 
 ## Docs
-- [ ] docs/QA.md with every verification result
+- [x] docs/QA.md with every verification result
 - [x] README.md (two-minute parent guide)
 - [x] docs/SCIENCE_SOURCES.md
 - [x] docs/LICENSES.md
-- [~] DECISIONS.md, PROGRESS.md current
+- [x] DECISIONS.md, PROGRESS.md current

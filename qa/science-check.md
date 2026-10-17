@@ -131,3 +131,21 @@ Opening pages directly failed here (DNS), so these checks relied on search resul
   - `esrs.jsc.nasa.gov/Tools/orbitTutorial.htm` (F5.1 backup).
   - The exact "magenta pink" quote (F2.2).
   - Each of these facts is still backed by its other sources.
+
+---
+
+## Resolution (added by the builder, 2026-10-17)
+
+Every flag above was acted on, the narration for the changed lines was re-recorded, and `docs/SCRIPT.md` was regenerated:
+
+| Flag | Fix |
+|---|---|
+| M1 p6 "The Earth was coming into view!" | Now "The Sun was shining on the Earth below! It's the best view on the whole station." |
+| M2 p8 "reaching up toward the lights" | Now "And look! Little green plants, reaching toward the lights." |
+| M1 p2 floating hair, no source | Source added (F1.10: NASA video of Karen Nyberg, 2013, via Space.com and Nextgov). |
+| M2 p5-peek "began to dry out", no source | Now "But the little root didn't like being out of its cozy pillow." (no science claim) |
+| Orange zinnias, colour unchecked | Source added to F2.7 (CBC News, Universe Today: the first bloom, January 2016, was orange). |
+| Optional: "watch the Moon grow" | Now "watch the Moon change shape" |
+| Optional: "floated down the station" | Now "floated along the station" |
+| Optional: "Where people are sleeping" | Now "Where lots of people are sleeping" |
+| Links search could not confirm | Marked in SCIENCE_SOURCES.md as possibly moved; each fact keeps another source. The "magenta pink" quote is now a paraphrase. |

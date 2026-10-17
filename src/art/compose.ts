@@ -99,7 +99,7 @@ export function composeScene(rawArt: SceneArt, ctx: ComposeCtx): Scene {
   for (const name of props) {
     if (name === 'boxes') {
       [[-210, 520, 1], [190, 600, 2], [70, 300, 3], [-120, 330, 4]].forEach(([ax, y, seed], i) =>
-        actors.push({ id: `box${i}`, svg: boxSvg(seed), x: ax, y, w: 140, h: 120, z: i === 1 ? 26 : 12, anim: i % 2 ? 'drift' : 'drift2', rot: (i - 1.5) * 8 }));
+        actors.push({ id: `box${i}`, svg: boxSvg(seed), x: ax, y, w: 140, h: 120, z: 12, anim: i % 2 ? 'drift' : 'drift2', rot: (i - 1.5) * 8 }));
       continue;
     }
     if (name === 'count-stars') {

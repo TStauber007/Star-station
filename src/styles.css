@@ -36,7 +36,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 /* ---------------------------------------------------------- stage */
 .stage { position: absolute; inset: 0; overflow: hidden; background: var(--night); contain: strict; }
 .stage .page, .stage .layer { position: absolute; inset: 0; }
-.stage .layer svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.stage .layer > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .layer.wash { pointer-events: none; transition: opacity 600ms ease, background 600ms ease; }
 .layer.fx, .layer.targets { pointer-events: none; z-index: 5; }
 .layer.targets { z-index: 6; }
@@ -101,7 +101,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 
 /* effects */
 .fx-spark { position: absolute; animation: spark 1.15s ease-out forwards; will-change: transform, opacity; }
-.fx-spark svg, .fx-float svg, .fx-star svg { width: 100%; height: 100%; display: block; }
+.fx-spark > svg, .fx-float > svg, .fx-star > svg { width: 100%; height: 100%; display: block; }
 @keyframes spark { 0% { transform: translate(0, 0) scale(0.2); opacity: 0; } 25% { opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)) scale(0.9); opacity: 0; } }
 .fx-float { position: absolute; animation: floatup 2.5s ease-out forwards; }
 @keyframes floatup { 0% { transform: translate(0, 0) scale(0.4); opacity: 0; } 15% { opacity: 1; transform: translate(0, -10px) scale(1); } 100% { transform: translate(var(--drift), -260px) scale(1.05); opacity: 0; } }
@@ -158,7 +158,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .turn.left { left: calc(18px + var(--safe-l)); }
 .turn.right { right: calc(18px + var(--safe-r)); flex-direction: row-reverse; padding: 8px 8px 8px 22px; }
 .turn-face { width: 76px; height: 76px; border-radius: 50%; background: #e9f2ff; overflow: hidden; }
-.turn-face svg { width: 100%; height: 100%; }
+.turn-face > svg { width: 100%; height: 100%; }
 .turn-name { font-size: 28px; font-weight: 700; }
 @keyframes turnin { from { transform: translateY(20px); opacity: 0; } }
 
@@ -174,7 +174,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .card { position: relative; width: min(41vw, calc((100vh - 300px) * 1.25)); max-width: 520px; background: var(--paper); border-radius: 30px; padding: 10px 10px 8px; box-shadow: var(--shadow); transform: scale(0.85); opacity: 0; transition: transform 0.45s ease, opacity 0.45s ease, box-shadow 0.3s; }
 .choice.open .card { transform: scale(1); opacity: 1; }
 .card-art { border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 3; }
-.card-art svg { width: 100%; height: 100%; display: block; }
+.card-art > svg { width: 100%; height: 100%; display: block; }
 .card-label { font-size: clamp(22px, 3.2vmin, 32px); font-weight: 700; text-align: center; padding: 6px 4px 2px; }
 .card.waiting { filter: saturate(0.92); }
 .card.glow { transform: scale(1.05) !important; box-shadow: var(--shadow), 0 0 0 8px var(--sun); }
@@ -195,7 +195,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 /* ---------------------------------------------------------- splash */
 .splash { background: radial-gradient(circle at 50% 30%, #3b4290, #1b1f45 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
 .splash-bot { width: min(38vmin, 300px); height: min(44vmin, 350px); animation: bob 4s ease-in-out infinite alternate; }
-.splash-bot svg { width: 100%; height: 100%; overflow: visible; }
+.splash-bot > svg { width: 100%; height: 100%; overflow: visible; }
 .logo { margin: 0; font-size: clamp(40px, 8vmin, 76px); font-weight: 700; color: var(--paper); letter-spacing: 0.02em; text-shadow: 0 4px 0 rgba(20, 20, 60, 0.35); }
 .big-go { width: 140px; height: 140px; border-radius: 50%; background: var(--sun); color: var(--ink); box-shadow: var(--shadow), 0 0 0 10px rgba(255, 246, 200, 0.35); display: grid; place-items: center; animation: arrowpulse 2.6s ease-in-out infinite; }
 .big-go .icon { width: 72px; height: 72px; }
@@ -208,12 +208,12 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .mcard { position: relative; display: flex; flex-direction: column; background: var(--paper); border-radius: 28px; padding: 8px; box-shadow: var(--shadow); min-height: 0; transition: transform 0.2s; }
 .mcard:active { transform: scale(0.97); }
 .mcard-art { flex: 1; min-height: 0; border-radius: 22px; overflow: hidden; }
-.mcard-art svg { width: 100%; height: 100%; display: block; }
+.mcard-art > svg { width: 100%; height: 100%; display: block; }
 .mcard-num { position: absolute; left: 16px; top: 16px; width: 52px; height: 52px; border-radius: 50%; background: var(--sun); font-size: 30px; font-weight: 700; line-height: 52px; box-shadow: var(--shadow); }
 .mcard.bedtime .mcard-num { background: var(--lav); color: var(--paper); }
 .mcard-title { font-size: clamp(19px, 2.6vmin, 28px); font-weight: 700; padding: 8px 6px 4px; line-height: 1.15; }
 .mcard-sticker { position: absolute; right: -6px; top: -10px; width: 82px; height: 82px; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.2)); }
-.mcard-sticker svg { width: 100%; height: 100%; }
+.mcard-sticker > svg { width: 100%; height: 100%; }
 .home-foot { position: absolute; left: calc(16px + var(--safe-l)); right: calc(16px + var(--safe-r)); bottom: calc(16px + var(--safe-b)); display: flex; justify-content: space-between; align-items: flex-end; z-index: 4; }
 .pill { display: inline-flex; align-items: center; gap: 12px; min-height: var(--tap); padding: 0 30px 0 22px; border-radius: 60px; background: var(--paper); box-shadow: var(--shadow); font-size: 26px; font-weight: 700; }
 .pill .icon { width: 42px; height: 42px; }
@@ -228,7 +228,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .detail-panel { width: min(88vw, 760px); background: var(--paper); border-radius: 36px; padding: 14px 14px 26px; text-align: center; box-shadow: var(--shadow); transform: scale(0.9); opacity: 0; transition: transform 0.3s, opacity 0.3s; display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .detail.open .detail-panel { transform: none; opacity: 1; }
 .detail-art { width: 100%; aspect-ratio: 1.6; border-radius: 26px; overflow: hidden; max-height: 46vh; }
-.detail-art svg { width: 100%; height: 100%; display: block; }
+.detail-art > svg { width: 100%; height: 100%; display: block; }
 .detail-title { font-size: clamp(30px, 5vmin, 46px); font-weight: 700; display: flex; flex-direction: column; }
 .detail-num { font-size: 22px; color: var(--ink-soft); }
 .detail .close { position: absolute; top: calc(16px + var(--safe-t)); right: calc(16px + var(--safe-r)); }
@@ -238,12 +238,13 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 }
 
 /* ---------------------------------------------------------- ending */
+.ended > .ctl-row, .ended > .arrow, .ended > .turn { display: none; }
 .ending { position: absolute; inset: 0; z-index: 35; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding-bottom: 120px; background: rgba(20, 24, 60, 0); transition: background 1.2s ease; }
 .ending.open { background: rgba(20, 24, 60, 0.55); }
 .ending.bedtime.open { background: rgba(12, 12, 36, 0.72); }
 .end-title { font-size: clamp(44px, 8vmin, 80px); font-weight: 700; color: var(--paper); text-shadow: 0 4px 0 rgba(20, 20, 60, 0.35); }
 .end-sticker { width: min(34vmin, 260px); height: min(34vmin, 260px); animation: stickerin 1.1s ease both, bob 5s 1.1s ease-in-out infinite alternate; }
-.end-sticker svg { width: 100%; height: 100%; }
+.end-sticker > svg { width: 100%; height: 100%; }
 @keyframes stickerin { from { transform: scale(0.2) rotate(-20deg); opacity: 0; } to { transform: none; opacity: 1; } }
 .end-sticker-name { font-size: 28px; color: var(--paper); font-weight: 700; min-height: 34px; }
 .end-sticker.hidden + .end-sticker-name { visibility: hidden; }
@@ -256,7 +257,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .wall-slots { flex: 1; width: min(94vw, 1000px); display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: 20px; min-height: 0; }
 .slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: rgba(185, 194, 214, 0.45); border-radius: 30px; padding: 12px; min-height: 0; }
 .slot-sticker { width: min(22vmin, 190px); aspect-ratio: 1; }
-.slot-sticker svg { width: 100%; height: 100%; }
+.slot-sticker > svg { width: 100%; height: 100%; }
 .slot-empty { width: min(18vmin, 150px); aspect-ratio: 1; border-radius: 50%; border: 6px dashed rgba(91, 90, 122, 0.4); display: grid; place-items: center; font-size: 48px; font-weight: 700; color: rgba(91, 90, 122, 0.55); }
 .slot-name { font-size: clamp(17px, 2.3vmin, 24px); font-weight: 700; text-align: center; color: var(--ink-soft); }
 .wall .ctl-row.left { top: auto; bottom: calc(18px + var(--safe-b)); }
@@ -281,7 +282,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .child { border-top: 2px solid #efe6d3; padding-top: 16px; margin-top: 16px; }
 .child-head { display: flex; gap: 18px; align-items: center; }
 .avatar-preview { width: 120px; height: 168px; flex: none; background: #e9f2ff; border-radius: 20px; }
-.avatar-preview svg { width: 100%; height: 100%; }
+.avatar-preview > svg { width: 100%; height: 100%; }
 .child-name { display: flex; flex-direction: column; gap: 6px; flex: 1; }
 .child-name .pill { align-self: flex-start; }
 .child-name input { font: inherit; font-size: 24px; padding: 10px 14px; border-radius: 14px; border: 2px solid #d8ccb2; background: #fff; width: 100%; max-width: 360px; -webkit-user-select: text; user-select: text; }
@@ -293,7 +294,7 @@ button:focus-visible { outline: 4px solid var(--sun); outline-offset: 3px; }
 .swatch.on { box-shadow: 0 0 0 4px var(--paper), 0 0 0 7px var(--ink); }
 .hair-styles { display: flex; gap: 8px; flex-wrap: wrap; }
 .hair-pick { width: 64px; height: 64px; border-radius: 16px; background: #eef3fb; padding: 0; }
-.hair-pick svg { width: 100%; height: 100%; }
+.hair-pick > svg { width: 100%; height: 100%; }
 .hair-pick.on { box-shadow: 0 0 0 4px var(--ink); }
 .toggle { display: flex; gap: 14px; align-items: flex-start; margin: 14px 0; cursor: pointer; }
 .toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
